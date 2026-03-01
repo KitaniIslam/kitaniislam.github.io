@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#111111"/>
+  <rect x="30" y="30" width="1140" height="840" rx="42" stroke="#FF7A1A" stroke-opacity="0.5" stroke-width="2"/>
+  <path d="M377 717C377 625.319 451.319 551 543 551H657C748.681 551 823 625.319 823 717V767H377V717Z" fill="#FF7A1A" fill-opacity="0.16"/>
+  <circle cx="600" cy="395" r="146" fill="#202020" stroke="#F5EDE4" stroke-opacity="0.4" stroke-width="2"/>
+  <path d="M600 516C663.513 516 715 464.513 715 401C715 337.487 663.513 286 600 286C536.487 286 485 337.487 485 401C485 464.513 536.487 516 600 516Z" fill="#F5EDE4" fill-opacity="0.12"/>
+  <path d="M180 186L260 146L340 186L300 266L220 266L180 186Z" fill="#FF7A1A" fill-opacity="0.32"/>
+  <path d="M860 156L946 126L1028 176L1000 260L908 276L846 222L860 156Z" fill="#F5EDE4" fill-opacity="0.16"/>
+  <path d="M150 560H330M870 620H1060M100 320H220" stroke="#FF7A1A" stroke-opacity="0.4" stroke-width="3" stroke-linecap="round"/>
+  <text x="600" y="830" text-anchor="middle" fill="#F5EDE4" fill-opacity="0.72" font-family="Arial, sans-serif" font-size="32" letter-spacing="2">ADD YOUR PERSONAL PHOTO IN /public/images</text>
+</svg>

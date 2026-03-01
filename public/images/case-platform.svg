@@ -1,0 +1,13 @@
+<svg width="1280" height="800" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="800" fill="#0D0D0D"/>
+  <rect x="90" y="90" width="1100" height="620" rx="34" fill="#151515"/>
+  <rect x="140" y="140" width="1000" height="520" rx="24" stroke="#FF7A1A" stroke-opacity="0.45" stroke-width="2" fill="none"/>
+  <path d="M220 220L1040 220" stroke="#2B2B2B" stroke-width="2"/>
+  <path d="M220 320L1040 320" stroke="#2B2B2B" stroke-width="2"/>
+  <path d="M220 420L1040 420" stroke="#2B2B2B" stroke-width="2"/>
+  <rect x="260" y="260" width="260" height="320" rx="18" fill="#FFFFFF" fill-opacity="0.04"/>
+  <rect x="550" y="260" width="180" height="320" rx="18" fill="#FF7A1A" fill-opacity="0.26"/>
+  <rect x="760" y="260" width="220" height="150" rx="16" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="760" y="430" width="220" height="150" rx="16" fill="#FFFFFF" fill-opacity="0.05"/>
+  <text x="220" y="180" fill="#F8F4EF" font-family="Arial, sans-serif" font-size="52" font-weight="700">PLATFORM SCALE DELIVERY</text>
+</svg>

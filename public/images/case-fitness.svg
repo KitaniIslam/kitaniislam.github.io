@@ -1,0 +1,11 @@
+<svg width="1280" height="800" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="800" fill="#0F0F0F"/>
+  <circle cx="240" cy="220" r="170" fill="#FF7A1A" fill-opacity="0.24"/>
+  <circle cx="1020" cy="610" r="220" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="120" y="120" width="1040" height="560" rx="44" fill="#161616" stroke="#F8F4EF" stroke-opacity="0.25"/>
+  <rect x="200" y="220" width="310" height="360" rx="28" fill="#101010" stroke="#FF7A1A" stroke-opacity="0.5"/>
+  <rect x="550" y="240" width="180" height="280" rx="26" fill="#FF7A1A" fill-opacity="0.28"/>
+  <rect x="760" y="240" width="310" height="120" rx="16" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="760" y="390" width="310" height="180" rx="16" fill="#FFFFFF" fill-opacity="0.05"/>
+  <text x="190" y="182" fill="#F8F4EF" font-family="Arial, sans-serif" font-size="54" font-weight="700">FITNESS MOBILE FLOW</text>
+</svg>

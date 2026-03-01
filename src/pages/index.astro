@@ -1,0 +1,317 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import portfolio from '../data/portfolio.json';
+
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'Services', href: '#services' },
+  { label: 'Tech', href: '#tech' },
+  { label: 'Case Study', href: '#case-study' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#footer' }
+];
+
+const firstTechRow = portfolio.technologies.slice(0, 8);
+const secondTechRow = portfolio.technologies.slice(8);
+const hasMoreTimeline = portfolio.experience.items.length > 3;
+const casePageSize = 3;
+const casePages = Array.from(
+  { length: Math.ceil(portfolio.caseStudies.items.length / casePageSize) },
+  (_, i) => portfolio.caseStudies.items.slice(i * casePageSize, (i + 1) * casePageSize)
+);
+---
+
+<MainLayout title={`${portfolio.meta.name} | Portfolio`} description={portfolio.meta.shortBio}>
+  <div class="page-shell" id="home">
+    <header class="topbar" data-nav>
+       <div class="hero-badge"><span>🚀</span></div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="topnav" data-menu>
+        {navItems.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+      <a href={portfolio.meta.primaryCtaHref} class="button nav-cta">{portfolio.meta.primaryCtaLabel}</a>
+    </header>
+
+    <main>
+      <section class="hero section-spacing">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span>👋</span>
+              <p>Available for work</p>
+            </div>
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight">{portfolio.meta.name}</span>
+            </h1>
+            <p class="hero-subtitle">{portfolio.meta.role}</p>
+            <p class="hero-description">{portfolio.meta.shortBio}</p>
+            <div class="hero-actions">
+              <a class="button primary" href={portfolio.meta.primaryCtaHref}>{portfolio.meta.primaryCtaLabel}</a>
+              <a class="button secondary" href={portfolio.meta.secondaryCtaHref} download>{portfolio.meta.secondaryCtaLabel}</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-wrapper">
+              <div class="hero-image-bg"></div>
+              <img src="/images/me.jpg" alt={portfolio.meta.name} class="hero-image" />
+              <div class="hero-image-decoration"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section-spacing section-block">
+        <div class="section-head">
+          <h2>{portfolio.services.title}</h2>
+          <p>{portfolio.services.description}</p>
+        </div>
+
+        <div class="service-grid">
+          {portfolio.services.items.map((service) => (
+            <article class="service-card">
+              <img src={service.illustration} alt={`${service.title} illustration`} loading="lazy" />
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="tech" class="section-spacing section-block tech-section">
+        <div class="section-head">
+          <h2>Technologies</h2>
+          <p>Tools I use in production, from frontend to backend and cloud workflows.</p>
+          <button class="tech-switch" type="button" aria-pressed="true" data-tech-toggle>
+            Animation: ON
+          </button>
+        </div>
+
+        <div class="logo-marquee" data-tech-animated>
+          <div class="logo-track left">
+            {[...firstTechRow, ...firstTechRow].map((tech) => (
+              <article class="logo-item">
+                <img src={tech.logo} alt={tech.name} loading="lazy" />
+                <span>{tech.name}</span>
+              </article>
+            ))}
+          </div>
+          <div class="logo-track right">
+            {[...secondTechRow, ...secondTechRow].map((tech) => (
+              <article class="logo-item">
+                <img src={tech.logo} alt={tech.name} loading="lazy" />
+                <span>{tech.name}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="tech-badge-wall is-hidden" data-tech-static>
+          {portfolio.technologies.map((tech) => (
+            <article class="logo-item static">
+              <img src={tech.logo} alt={tech.name} loading="lazy" />
+              <span>{tech.name}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="case-study" class="section-spacing section-block">
+        <div class="section-head">
+          <h2>{portfolio.caseStudies.title}</h2>
+          <p>3 cards per view. Scroll the case section to move to the next row of 3 cards.</p>
+        </div>
+
+        <div class="carousel" data-carousel>
+          <button class="carousel-btn prev" aria-label="Previous case study page" data-prev>←</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" data-track>
+              {casePages.map((page) => (
+                <div class="case-page">
+                  {page.map((study) => (
+                    <article class="case-card">
+                      <img src={study.image} alt={study.name} loading="lazy" />
+                      <div>
+                        <p class="chip">{study.domain}</p>
+                        <h3>{study.name}</h3>
+                        <p>{study.impact}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+          <button class="carousel-btn next" aria-label="Next case study page" data-next>→</button>
+        </div>
+      </section>
+
+      <section id="experience" class="section-spacing section-block experience-section">
+        <div class="section-head">
+          <h2>{portfolio.experience.title}</h2>
+          <p>Latest three items are shown by default. Expand to view full timeline.</p>
+        </div>
+
+        <ol class="timeline" data-timeline>
+          {portfolio.experience.items.map((item, index) => (
+            <li class={index > 2 ? 'timeline-extra-item is-collapsed' : ''}>
+              <p class="period">{item.period}</p>
+              <h3>{item.role}</h3>
+              <p>{item.details}</p>
+            </li>
+          ))}
+        </ol>
+
+        {hasMoreTimeline && (
+          <button class="timeline-toggle" type="button" aria-expanded="false" data-timeline-toggle>
+            Show full timeline
+          </button>
+        )}
+      </section>
+    </main>
+
+    <footer id="footer" class="footer section-spacing">
+      <div class="footer-horizontal">
+        <div class="footer-identity">
+          <h2>{portfolio.meta.name}</h2>
+          <p>{portfolio.footer.email}</p>
+        </div>
+        <a href={portfolio.meta.secondaryCtaHref} class="button ghost" download>Download CV</a>
+        <div class="footer-social-icons" aria-label="Social links">
+          {portfolio.footer.socials
+            .filter((social) => social.icon !== '@')
+            .map((social) => (
+              <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} class="footer-icon-link">
+                {social.icon === 'in' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3" />
+                    <path d="M8 10v6" />
+                    <path d="M8 8h.01" />
+                    <path d="M12 16v-3a2 2 0 0 1 4 0v3" />
+                  </svg>
+                )}
+                {social.icon === 'wa' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 11.5A8.5 8.5 0 0 1 7.5 19l-3.5 1 1-3.3A8.5 8.5 0 1 1 20 11.5Z" />
+                    <path d="M9.5 9.5c.3 2 1.7 3.8 4 4.7" />
+                  </svg>
+                )}
+                {social.icon === 'ig' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" />
+                  </svg>
+                )}
+              </a>
+            ))}
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script is:inline>
+    const navRoot = document.querySelector('[data-nav]');
+    const menuToggle = navRoot?.querySelector('[data-menu-toggle]');
+    const menu = navRoot?.querySelector('[data-menu]');
+    const navLinks = menu?.querySelectorAll('a') ?? [];
+
+    const setMenuState = (open) => {
+      if (!navRoot || !menuToggle || !menu) return;
+      navRoot.classList.toggle('menu-open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+    };
+
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = navRoot?.classList.contains('menu-open');
+      setMenuState(!isOpen);
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+
+    const techToggle = document.querySelector('[data-tech-toggle]');
+    const techAnimated = document.querySelector('[data-tech-animated]');
+    const techStatic = document.querySelector('[data-tech-static]');
+    let techAnimationOn = true;
+
+    const setTechMode = (on) => {
+      techAnimationOn = on;
+      if (techAnimated) techAnimated.classList.toggle('is-hidden', !on);
+      if (techStatic) techStatic.classList.toggle('is-hidden', on);
+      if (techToggle) {
+        techToggle.setAttribute('aria-pressed', String(on));
+        techToggle.textContent = `Animation: ${on ? 'ON' : 'OFF'}`;
+      }
+    };
+
+    setTechMode(true);
+    techToggle?.addEventListener('click', () => setTechMode(!techAnimationOn));
+
+    const timeline = document.querySelector('[data-timeline]');
+    const timelineToggle = document.querySelector('[data-timeline-toggle]');
+    let timelineExpanded = false;
+
+    const setTimelineMode = (expanded) => {
+      timelineExpanded = expanded;
+      if (!timeline || !timelineToggle) return;
+      timeline.classList.toggle('is-expanded', expanded);
+      timelineToggle.setAttribute('aria-expanded', String(expanded));
+      timelineToggle.textContent = expanded ? 'Show less' : 'Show full timeline';
+    };
+
+    setTimelineMode(false);
+    timelineToggle?.addEventListener('click', () => setTimelineMode(!timelineExpanded));
+
+    const carousel = document.querySelector('[data-carousel]');
+    if (carousel) {
+      const track = carousel.querySelector('[data-track]');
+      const viewport = carousel.querySelector('.carousel-viewport');
+      const prev = carousel.querySelector('[data-prev]');
+      const next = carousel.querySelector('[data-next]');
+      const total = track ? track.children.length : 0;
+      let index = 0;
+      let wheelLock = false;
+
+      const update = () => {
+        if (!track) return;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      };
+
+      prev?.addEventListener('click', () => {
+        index = (index - 1 + total) % total;
+        update();
+      });
+
+      next?.addEventListener('click', () => {
+        index = (index + 1) % total;
+        update();
+      });
+
+      viewport?.addEventListener(
+        'wheel',
+        (event) => {
+          if (Math.abs(event.deltaY) < 10 || wheelLock) return;
+          event.preventDefault();
+          wheelLock = true;
+          if (event.deltaY > 0) {
+            index = (index + 1) % total;
+          } else {
+            index = (index - 1 + total) % total;
+          }
+          update();
+          setTimeout(() => {
+            wheelLock = false;
+          }, 380);
+        },
+        { passive: false }
+      );
+    }
+  </script>
+</MainLayout>

@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "name": "Kitani Islam",
+    "role": "Software Engineering",
+    "shortBio": "9+ years of software engineering experience across North Africa, Europe, and Asia, I build Web/Mobile products and backend systems. empowering them with AI capabilities.",
+    "email": "slmkitani@gmail.com",
+    "primaryCtaLabel": "Let's Talk",
+    "primaryCtaHref": "mailto:slmkitani@gmail.com",
+    "secondaryCtaLabel": "Download CV",
+    "secondaryCtaHref": "/cv/Kitani-Islam-CV.pdf",
+    "avatar": "/images/full.JPG"
+  },
+  "overview": {
+    "experienceYears": "9+ Years Experience",
+    "domains": ["Fintech", "Fitness", "AI / RAG"]
+  },
+  "services": {
+    "title": "Services I Provide",
+    "description": "Focused engineering services from planning to production.",
+    "items": [
+      {
+        "title": "Web & Mobile Product Development",
+        "text": "Build web and mobile products together. Depending on your use case, I choose the right stack and architecture for speed, quality, and long-term maintainability.",
+        "illustration": "/images/service-web-mobile.svg"
+      },
+      {
+        "title": "Backend & API Systems",
+        "text": "Design reliable backend architecture and APIs. The implementation approach depends on your use case, traffic profile, data model, and integration requirements.",
+        "illustration": "/images/service-api.svg"
+      },
+      {
+        "title": "AI Feature Integration",
+        "text": "Integrate practical AI capabilities, including RAG workflows, into real products. Model choice, retrieval strategy, and tooling are selected based on your product use case.",
+        "illustration": "/images/service-ai.svg"
+      }
+    ]
+  },
+  "technologies": [
+    { "name": "React", "logo": "https://cdn.simpleicons.org/react/9ca3af" },
+    {
+      "name": "React Native",
+      "logo": "https://cdn.simpleicons.org/react/9ca3af"
+    },
+    {
+      "name": "Next.js",
+      "logo": "https://cdn.simpleicons.org/nextdotjs/9ca3af"
+    },
+    {
+      "name": "TypeScript",
+      "logo": "https://cdn.simpleicons.org/typescript/9ca3af"
+    },
+    {
+      "name": "JavaScript",
+      "logo": "https://cdn.simpleicons.org/javascript/9ca3af"
+    },
+    {
+      "name": "Node.js",
+      "logo": "https://cdn.simpleicons.org/nodedotjs/9ca3af"
+    },
+    {
+      "name": "Express.js",
+      "logo": "https://cdn.simpleicons.org/express/9ca3af"
+    },
+    { "name": "GraphQL", "logo": "https://cdn.simpleicons.org/graphql/9ca3af" },
+    {
+      "name": "REST APIs",
+      "logo": "https://cdn.simpleicons.org/postman/9ca3af"
+    },
+    { "name": "Zod", "logo": "https://cdn.simpleicons.org/zod/9ca3af" },
+    { "name": "Prisma", "logo": "https://cdn.simpleicons.org/prisma/9ca3af" },
+    {
+      "name": "PostgreSQL",
+      "logo": "https://cdn.simpleicons.org/postgresql/9ca3af"
+    },
+    { "name": "MongoDB", "logo": "https://cdn.simpleicons.org/mongodb/9ca3af" },
+    { "name": "MySQL", "logo": "https://cdn.simpleicons.org/mysql/9ca3af" },
+    {
+      "name": "AWS Lambda",
+      "logo": "https://cdn.simpleicons.org/amazonwebservices/9ca3af"
+    },
+    {
+      "name": "AWS EC2",
+      "logo": "https://cdn.simpleicons.org/amazonwebservices/9ca3af"
+    },
+    {
+      "name": "AWS RDS",
+      "logo": "https://cdn.simpleicons.org/amazonwebservices/9ca3af"
+    },
+    {
+      "name": "API Gateway",
+      "logo": "https://cdn.simpleicons.org/amazonwebservices/9ca3af"
+    },
+    {
+      "name": "Supabase",
+      "logo": "https://cdn.simpleicons.org/supabase/9ca3af"
+    },
+    {
+      "name": "Google Cloud",
+      "logo": "https://cdn.simpleicons.org/googlecloud/9ca3af"
+    },
+    {
+      "name": "Azure",
+      "logo": "https://cdn.simpleicons.org/microsoftazure/9ca3af"
+    },
+    { "name": "Git", "logo": "https://cdn.simpleicons.org/git/9ca3af" },
+    { "name": "GitHub", "logo": "https://cdn.simpleicons.org/github/9ca3af" },
+    {
+      "name": "GitLab CI/CD",
+      "logo": "https://cdn.simpleicons.org/gitlab/9ca3af"
+    },
+    { "name": "Stripe", "logo": "https://cdn.simpleicons.org/stripe/9ca3af" },
+    { "name": "ChatGPT", "logo": "https://cdn.simpleicons.org/openai/9ca3af" },
+    { "name": "Gemini", "logo": "https://cdn.simpleicons.org/google/9ca3af" },
+    { "name": "Python", "logo": "https://cdn.simpleicons.org/python/9ca3af" }
+  ],
+  "caseStudies": {
+    "title": "Case Study",
+    "items": [
+      {
+        "name": "Walmart Product Delivery",
+        "domain": "Enterprise / Retail",
+        "impact": "Contributed to production-ready product features and engineering delivery through agency collaboration.",
+        "image": "/images/case-platform.svg"
+      },
+      {
+        "name": "Finimize Experience Work",
+        "domain": "Fintech",
+        "impact": "Implemented scalable frontend and integration patterns for high-quality financial product experiences.",
+        "image": "/images/case-fintech.svg"
+      },
+      {
+        "name": "Juiceplus Mobile Flows",
+        "domain": "Fitness",
+        "impact": "Improved mobile usability and delivery quality in cross-functional product teams.",
+        "image": "/images/case-fitness.svg"
+      },
+      {
+        "name": "TATA Engineering Support",
+        "domain": "Enterprise",
+        "impact": "Delivered practical product engineering support with performance and implementation quality focus.",
+        "image": "/images/case-platform.svg"
+      },
+      {
+        "name": "CheckD Wallet Launch",
+        "domain": "Fintech / Wallet",
+        "impact": "Supported team delivery and public launch by aligning engineering workflow, quality, and execution.",
+        "image": "/images/case-fintech.svg"
+      },
+      {
+        "name": "RegTech AI Product Build",
+        "domain": "AI / Compliance",
+        "impact": "Led technical delivery for regulatory monitoring features with product-focused decision making.",
+        "image": "/images/case-fitness.svg"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Background & Technical Experience",
+    "items": [
+      {
+        "period": "Sep 2025 - Current",
+        "role": "Otonoco AI - Lead Software Engineer (Kuala Lumpur)",
+        "details": "Leading a fast-growing startup team building an AI product for regulatory monitoring in banking and insurance, with ownership of technical decisions, release planning, task assignment, and turning user feedback into product priorities."
+      },
+      {
+        "period": "Jun 2024 - Current",
+        "role": "Trisilco - Lead Software Engineer (Kuala Lumpur)",
+        "details": "Led the company shift to JS-based web/mobile services, mentored .NET/C# developers through workshops and coding sessions, defined engineering workflows, and supported the public launch of CheckD Wallet with Dataswyft."
+      },
+      {
+        "period": "Jun 2024 - Aug 2025",
+        "role": "KOHA - Lead Software Engineer (Kuala Lumpur)",
+        "details": "Led product delivery across mobile and web initiatives, including client onboarding flows, API optimization, data security and authorization, task ownership, and code reviews."
+      },
+      {
+        "period": "Apr 2024 - May 2024",
+        "role": "Antler (MY2) - Co-founder, Spon.Social (Kuala Lumpur)",
+        "details": "Co-founded Spon.Social and completed the 6-week Antler pre-seed program, validating product direction and business model while navigating early-stage monetization challenges."
+      },
+      {
+        "period": "Feb 2024 - Jul 2024",
+        "role": "Spon.Social - CTO (Bangkok)",
+        "details": "As CTO and co-founder, designed relational database architecture, built and secured backend services, optimized mobile app performance, and shaped a fast 60-second matching experience for nearby activity discovery."
+      },
+      {
+        "period": "Mar 2023 - Jul 2023",
+        "role": "Trienpont International - Consulting Senior Full Stack Developer (Bangkok)",
+        "details": "Led and mentored junior developers through pair programming, technology selection by requirements, workflow standards, database design, mobile delivery, and close collaboration with design for better UI/UX."
+      },
+      {
+        "period": "Aug 2021 - Mar 2023",
+        "role": "RiverDone Digital - Fullstack React/React Native Developer (UK, Remote)",
+        "details": "Delivered and optimized products for clients including Walmart, TATA, Finimize, and Juiceplus, with responsibilities covering refactoring, troubleshooting, CI/CD automation, native module integration, planning, and building apps from scratch."
+      },
+      {
+        "period": "Jun 2020 - Jul 2021",
+        "role": "Nexus Digital Solutions - Frontend Developer (Algeria)",
+        "details": "Led the web team on an Uber-like platform, managed frontend delivery, collaborated with design and mobile teams, shaped API structures, and introduced automation workflows."
+      },
+      {
+        "period": "Oct 2019 - Mar 2020",
+        "role": "Glitnir Forseti - Frontend Developer (Algeria)",
+        "details": "Supported a blockchain startup by accelerating delivery through backend/frontend integration support, third-party exchange API integration, and targeted code refactoring."
+      },
+      {
+        "period": "Dec 2017 - Jan 2020",
+        "role": "Adsumnetworks - R&D Full Stack Developer (UK, Remote)",
+        "details": "Co-founded an IoT initiative in intelligent transportation, leading software development across cloud, web/mobile apps, APIs, and data storage, including field testing workflows recognized by Catapult Network UK."
+      }
+    ]
+  },
+  "footer": {
+    "text": "Kitani Islam - Senior Full Stack (React/React Native) Engineer",
+    "email": "slmkitani@gmail.com",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "icon": "in",
+        "href": "https://www.linkedin.com/in/kitani-islam/"
+      },
+      {
+        "label": "WhatsApp",
+        "icon": "wa",
+        "href": "https://wa.me/?text=Hi%20Kitani%20I%20saw%20your%20portfolio"
+      },
+      {
+        "label": "Instagram",
+        "icon": "ig",
+        "href": "https://www.instagram.com/kitaniislam/"
+      },
+      { "label": "Email", "icon": "@", "href": "mailto:slmkitani@gmail.com" }
+    ],
+    "links": [
+      { "label": "Email", "href": "mailto:slmkitani@gmail.com" },
+      { "label": "Download CV", "href": "/cv/Kitani-Islam-CV.pdf" }
+    ]
+  }
+}

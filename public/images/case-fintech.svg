@@ -1,0 +1,13 @@
+<svg width="1280" height="800" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="800" fill="#0F0F0F"/>
+  <rect x="60" y="70" width="1160" height="660" rx="30" fill="#151515" stroke="#FF7A1A" stroke-opacity="0.35"/>
+  <path d="M140 240H1140" stroke="#2B2B2B" stroke-width="2"/>
+  <path d="M140 340H1140" stroke="#2B2B2B" stroke-width="2"/>
+  <path d="M140 440H1140" stroke="#2B2B2B" stroke-width="2"/>
+  <path d="M140 540H1140" stroke="#2B2B2B" stroke-width="2"/>
+  <rect x="180" y="280" width="230" height="220" rx="18" fill="#FF7A1A" fill-opacity="0.22"/>
+  <rect x="450" y="240" width="290" height="300" rx="20" fill="#FFFFFF" fill-opacity="0.05"/>
+  <rect x="780" y="300" width="320" height="180" rx="16" fill="#FF7A1A" fill-opacity="0.2"/>
+  <text x="180" y="180" fill="#F8F4EF" font-family="Arial, sans-serif" font-size="56" font-weight="700">FINTECH PRODUCT DASHBOARD</text>
+  <text x="180" y="650" fill="#BFB8AE" font-family="Arial, sans-serif" font-size="36">Case Snapshot</text>
+</svg>
