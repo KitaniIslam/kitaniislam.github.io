@@ -19,6 +19,10 @@ const casePages = Array.from(
   { length: Math.ceil(portfolio.caseStudies.items.length / casePageSize) },
   (_, i) => portfolio.caseStudies.items.slice(i * casePageSize, (i + 1) * casePageSize)
 );
+const toBasePath = (value) =>
+  typeof value === 'string' && value.startsWith('/')
+    ? `${import.meta.env.BASE_URL}${value.replace(/^\/+/, '')}`
+    : value;
 ---
 
 <MainLayout title={`${portfolio.meta.name} | Portfolio`} description={portfolio.meta.shortBio}>
@@ -53,13 +57,13 @@ const casePages = Array.from(
             <p class="hero-description">{portfolio.meta.shortBio}</p>
             <div class="hero-actions">
               <a class="button primary" href={portfolio.meta.primaryCtaHref}>{portfolio.meta.primaryCtaLabel}</a>
-              <a class="button secondary" href={portfolio.meta.secondaryCtaHref} download>{portfolio.meta.secondaryCtaLabel}</a>
+              <a class="button secondary" href={toBasePath(portfolio.meta.secondaryCtaHref)} download>{portfolio.meta.secondaryCtaLabel}</a>
             </div>
           </div>
           <div class="hero-visual">
             <div class="hero-image-wrapper">
               <div class="hero-image-bg"></div>
-              <img src="/images/me.jpg" alt={portfolio.meta.name} class="hero-image" />
+              <img src={toBasePath('/images/me.jpg')} alt={portfolio.meta.name} class="hero-image" />
               <div class="hero-image-decoration"></div>
             </div>
           </div>
@@ -75,7 +79,7 @@ const casePages = Array.from(
         <div class="service-grid">
           {portfolio.services.items.map((service) => (
             <article class="service-card">
-              <img src={service.illustration} alt={`${service.title} illustration`} loading="lazy" />
+              <img src={toBasePath(service.illustration)} alt={`${service.title} illustration`} loading="lazy" />
               <h3>{service.title}</h3>
               <p>{service.text}</p>
             </article>
@@ -135,7 +139,7 @@ const casePages = Array.from(
                 <div class="case-page">
                   {page.map((study) => (
                     <article class="case-card">
-                      <img src={study.image} alt={study.name} loading="lazy" />
+                      <img src={toBasePath(study.image)} alt={study.name} loading="lazy" />
                       <div>
                         <p class="chip">{study.domain}</p>
                         <h3>{study.name}</h3>
@@ -181,7 +185,7 @@ const casePages = Array.from(
           <h2>{portfolio.meta.name}</h2>
           <p>{portfolio.footer.email}</p>
         </div>
-        <a href={portfolio.meta.secondaryCtaHref} class="button ghost" download>Download CV</a>
+        <a href={toBasePath(portfolio.meta.secondaryCtaHref)} class="button ghost" download>Download CV</a>
         <div class="footer-social-icons" aria-label="Social links">
           {portfolio.footer.socials
             .filter((social) => social.icon !== '@')
