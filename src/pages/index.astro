@@ -14,12 +14,7 @@ const navItems = [
 const firstTechRow = portfolio.technologies.slice(0, 8);
 const secondTechRow = portfolio.technologies.slice(8);
 const hasMoreTimeline = portfolio.experience.items.length > 3;
-const casePageSize = 3;
-const casePages = Array.from(
-  { length: Math.ceil(portfolio.caseStudies.items.length / casePageSize) },
-  (_, i) => portfolio.caseStudies.items.slice(i * casePageSize, (i + 1) * casePageSize)
-);
-const toBasePath = (value) => {
+const toBasePath = (value: string) => {
   if (typeof value !== 'string' || !value.startsWith('/')) return value;
   const base = import.meta.env.BASE_URL;
   const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
@@ -130,26 +125,29 @@ const toBasePath = (value) => {
       <section id="case-study" class="section-spacing section-block">
         <div class="section-head">
           <h2>{portfolio.caseStudies.title}</h2>
-          <p>3 cards per view. Scroll the case section to move to the next row of 3 cards.</p>
+          <p>Selected examples from product work and delivery impact.</p>
         </div>
 
         <div class="carousel" data-carousel>
           <button class="carousel-btn prev" aria-label="Previous case study page" data-prev>←</button>
           <div class="carousel-viewport">
             <div class="carousel-track" data-track>
-              {casePages.map((page) => (
-                <div class="case-page">
-                  {page.map((study) => (
-                    <article class="case-card">
-                      <img src={toBasePath(study.image)} alt={study.name} loading="lazy" />
-                      <div>
-                        <p class="chip">{study.domain}</p>
-                        <h3>{study.name}</h3>
-                        <p>{study.impact}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
+              {portfolio.caseStudies.items.map((study) => (
+                <article
+                  class="case-card"
+                  data-case-card
+                  data-name={study.name}
+                  data-domain={study.domain}
+                  data-description={study.impact}
+                  data-image={toBasePath(study.image)}
+                >
+                  <img src={toBasePath(study.image)} alt={study.name} loading="lazy" />
+                  <div>
+                    <p class="chip">{study.domain}</p>
+                    <h3>{study.name}</h3>
+                    <p>{study.impact}</p>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
@@ -194,21 +192,20 @@ const toBasePath = (value) => {
             .map((social) => (
               <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} class="footer-icon-link">
                 {social.icon === 'in' && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#0077B5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="3" />
                     <path d="M8 10v6" />
-                    <path d="M8 8h.01" />
                     <path d="M12 16v-3a2 2 0 0 1 4 0v3" />
                   </svg>
                 )}
                 {social.icon === 'wa' && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 11.5A8.5 8.5 0 0 1 7.5 19l-3.5 1 1-3.3A8.5 8.5 0 1 1 20 11.5Z" />
                     <path d="M9.5 9.5c.3 2 1.7 3.8 4 4.7" />
                   </svg>
                 )}
                 {social.icon === 'ig' && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="5" />
                     <circle cx="12" cy="12" r="4" />
                     <circle cx="17.5" cy="6.5" r="1" />
@@ -219,6 +216,19 @@ const toBasePath = (value) => {
         </div>
       </div>
     </footer>
+
+    <div class="case-modal" data-case-modal hidden>
+      <div class="case-modal-backdrop" data-case-close></div>
+      <article class="case-modal-panel" role="dialog" aria-modal="true" aria-label="Case study details">
+        <button class="case-modal-close" type="button" aria-label="Close modal" data-case-close>✕</button>
+        <img class="case-modal-image" src="" alt="" data-case-image />
+        <div class="case-modal-content">
+          <p class="chip" data-case-domain></p>
+          <h3 data-case-title></h3>
+          <p data-case-description></p>
+        </div>
+      </article>
+    </div>
   </div>
 
   <script is:inline>
@@ -279,24 +289,33 @@ const toBasePath = (value) => {
     if (carousel) {
       const track = carousel.querySelector('[data-track]');
       const viewport = carousel.querySelector('.carousel-viewport');
+      const cards = track ? Array.from(track.querySelectorAll('[data-case-card]')) : [];
       const prev = carousel.querySelector('[data-prev]');
       const next = carousel.querySelector('[data-next]');
-      const total = track ? track.children.length : 0;
+      const total = cards.length;
       let index = 0;
       let wheelLock = false;
+      let touchStartX = 0;
+
+      const cardsPerView = () => (window.matchMedia('(min-width: 1100px)').matches ? 3 : 1);
+      const maxIndex = () => Math.max(0, total - cardsPerView());
 
       const update = () => {
-        if (!track) return;
-        track.style.transform = `translateX(-${index * 100}%)`;
+        if (!track || cards.length === 0) return;
+        const gap = parseFloat(getComputedStyle(track).gap || '0');
+        const cardWidth = cards[0].getBoundingClientRect().width + gap;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
       };
 
       prev?.addEventListener('click', () => {
-        index = (index - 1 + total) % total;
+        const step = cardsPerView();
+        index = index <= 0 ? maxIndex() : Math.max(0, index - step);
         update();
       });
 
       next?.addEventListener('click', () => {
-        index = (index + 1) % total;
+        const step = cardsPerView();
+        index = index >= maxIndex() ? 0 : Math.min(maxIndex(), index + step);
         update();
       });
 
@@ -306,10 +325,11 @@ const toBasePath = (value) => {
           if (Math.abs(event.deltaY) < 10 || wheelLock) return;
           event.preventDefault();
           wheelLock = true;
+          const step = cardsPerView();
           if (event.deltaY > 0) {
-            index = (index + 1) % total;
+            index = index >= maxIndex() ? 0 : Math.min(maxIndex(), index + step);
           } else {
-            index = (index - 1 + total) % total;
+            index = index <= 0 ? maxIndex() : Math.max(0, index - step);
           }
           update();
           setTimeout(() => {
@@ -318,6 +338,60 @@ const toBasePath = (value) => {
         },
         { passive: false }
       );
+
+      viewport?.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+      });
+
+      viewport?.addEventListener('touchend', (event) => {
+        const delta = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) < 35) return;
+        const step = cardsPerView();
+        if (delta < 0) {
+          index = index >= maxIndex() ? 0 : Math.min(maxIndex(), index + step);
+        } else {
+          index = index <= 0 ? maxIndex() : Math.max(0, index - step);
+        }
+        update();
+      });
+
+      window.addEventListener('resize', () => {
+        index = Math.min(index, maxIndex());
+        update();
+      });
+
+      update();
+
+      const modal = document.querySelector('[data-case-modal]');
+      const modalImage = modal?.querySelector('[data-case-image]');
+      const modalTitle = modal?.querySelector('[data-case-title]');
+      const modalDomain = modal?.querySelector('[data-case-domain]');
+      const modalDescription = modal?.querySelector('[data-case-description]');
+      const closeTargets = modal?.querySelectorAll('[data-case-close]') ?? [];
+
+      const closeModal = () => {
+        if (!modal) return;
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      };
+
+      cards.forEach((card) => {
+        card.addEventListener('click', () => {
+          if (!modal || !modalImage || !modalTitle || !modalDomain || !modalDescription) return;
+          modalImage.src = card.getAttribute('data-image') || '';
+          modalImage.alt = card.getAttribute('data-name') || 'Case study image';
+          modalTitle.textContent = card.getAttribute('data-name') || '';
+          modalDomain.textContent = card.getAttribute('data-domain') || '';
+          modalDescription.textContent = card.getAttribute('data-description') || '';
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      closeTargets.forEach((target) => target.addEventListener('click', closeModal));
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeModal();
+      });
     }
   </script>
 </MainLayout>
