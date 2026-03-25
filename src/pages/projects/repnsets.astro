@@ -1,0 +1,130 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import portfolio from '../../data/portfolio.json';
+
+const project = portfolio.projects.repnsets;
+const toBasePath = (value: string) => {
+  if (typeof value !== 'string' || !value.startsWith('/')) return value;
+  const base = import.meta.env.BASE_URL;
+  const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  return `${normalizedBase}${value}`;
+};
+---
+
+<MainLayout title={`${project.name} | Product Work`} description={project.summary}>
+  <div class="project-page-shell">
+    <section class="project-hero">
+      <div class="project-hero-copy">
+        <a href={toBasePath('/#case-study')} class="project-back-link">← Back to portfolio</a>
+        <p class="project-eyebrow">{project.category}</p>
+        <h1>{project.name}</h1>
+        <p class="project-tagline">{project.tagline}</p>
+        <p class="project-summary">{project.summary}</p>
+        <div class="project-hero-facts">
+          <span>Web + iOS + Android</span>
+          <span>Routines + Matrixes</span>
+          <span>Playback + Progress</span>
+        </div>
+        <div class="project-hero-actions">
+          <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit Live Project</a>
+          <a class="button project-secondary-button" href={toBasePath('/#footer')}>Let&apos;s Talk</a>
+        </div>
+      </div>
+
+      <div class="project-hero-visual">
+        <img src={toBasePath(project.heroImage)} alt={`${project.name} homepage`} loading="eager" />
+      </div>
+    </section>
+
+    <section class="project-meta-strip">
+      <article>
+        <span>Focus</span>
+        <p>Training structure, playback, and progression</p>
+      </article>
+      <article>
+        <span>Platforms</span>
+        <p>Web platform, iOS app, Android app</p>
+      </article>
+      <article>
+        <span>Core Areas</span>
+        <p>Routines, matrixes, exercises, videos, progress</p>
+      </article>
+    </section>
+
+    <section class="project-story-grid">
+      <div class="project-story-panel">
+        <p class="project-section-label">Overview</p>
+        <div class="project-story-list">
+          {project.overview.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+      </div>
+
+      <div class="project-story-panel">
+        <p class="project-section-label">What Stands Out</p>
+        <div class="project-highlight-list">
+          {project.highlights.map((item, index) => (
+            <div class="project-highlight-item">
+              <p class="project-highlight-index">0{index + 1}</p>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery-section">
+      <div class="section-head">
+        <h2>Web Experience</h2>
+        <p>The desktop side focuses on planning routines, reviewing matrixes, and keeping training structure readable at a glance.</p>
+      </div>
+
+      <div class="project-gallery-grid web">
+        {project.gallery.web.map((image) => (
+          <figure class="project-shot wide">
+            <img src={toBasePath(image)} alt={`${project.name} web screenshot`} loading="lazy" />
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-gallery-section">
+      <div class="section-head">
+        <h2>Mobile Experience</h2>
+        <p>The mobile flows carry the routine into the actual session, with quick access to active plans, day details, exercise playback, and completion actions.</p>
+      </div>
+
+      <div class="project-mobile-columns">
+        <div>
+          <p class="project-section-label">iOS</p>
+          <div class="project-gallery-grid mobile">
+            {project.gallery.ios.map((image) => (
+              <figure class="project-shot phone">
+                <img src={toBasePath(image)} alt={`${project.name} iOS screenshot`} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p class="project-section-label">Android</p>
+          <div class="project-gallery-grid mobile">
+            {project.gallery.android.map((image) => (
+              <figure class="project-shot phone">
+                <img src={toBasePath(image)} alt={`${project.name} Android screenshot`} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cta-panel">
+      <p class="project-section-label">Live Product</p>
+      <h2>Visit the website</h2>
+      <p>Open the live site to explore the product directly.</p>
+      <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit repnsets.com</a>
+    </section>
+  </div>
+</MainLayout>

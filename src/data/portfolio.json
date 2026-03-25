@@ -12,30 +12,27 @@
   },
   "overview": {
     "experienceYears": "9+ Years Experience",
-    "domains": [
-      "Fintech",
-      "Fitness",
-      "AI / RAG"
-    ]
+    "domains": ["Fintech", "Fitness", "AI / RAG"]
   },
   "services": {
     "title": "Services I Provide",
-    "description": "Focused engineering services from planning to production.",
+    "description": "Promotional features that reflect how I can help across product, engineering, AI, and design.",
     "items": [
       {
-        "title": "Web & Mobile Product Development",
-        "text": "Build web and mobile products together. Depending on your use case, I choose the right stack and architecture for speed, quality, and long-term maintainability.",
-        "illustration": "/images/service-web-mobile.svg"
+        "title": "Web / Mobile",
+        "text": "I build web and mobile experiences that are practical, fast, and ready for real users."
       },
       {
-        "title": "Backend & API Systems",
-        "text": "Design reliable backend architecture and APIs. The implementation approach depends on your use case, traffic profile, data model, and integration requirements.",
-        "illustration": "/images/service-api.svg"
+        "title": "Backends and APIs",
+        "text": "I design backend systems and API layers that keep products stable, scalable, and easier to extend."
       },
       {
-        "title": "AI Feature Integration",
-        "text": "Integrate practical AI capabilities, including RAG workflows, into real products. Model choice, retrieval strategy, and tooling are selected based on your product use case.",
-        "illustration": "/images/service-ai.svg"
+        "title": "AI Integration / RAG",
+        "text": "I can help add AI-powered features and lightweight RAG workflows into products when they make sense. I position this as practical integration, not deep AI research."
+      },
+      {
+        "title": "Good Eye for Design",
+        "text": "I care about product feel, visual clarity, and details that make interfaces look polished and easier to trust."
       }
     ]
   },
@@ -222,25 +219,22 @@
     }
   ],
   "caseStudies": {
-    "title": "Case Study",
+    "title": "Featured Product Work",
+    "description": "A closer look at one product where brand, planning flows, and cross-platform delivery had to work together.",
     "items": [
       {
-        "name": "Walmart Product Delivery",
-        "domain": "Enterprise / Retail",
-        "impact": "Contributed to production-ready product features and engineering delivery through agency collaboration.",
-        "image": "/images/case-platform.svg"
+        "name": "Rep&Sets",
+        "domain": "Editorial Athlete Platform",
+        "impact": "A cross-platform training product for coaches and athletes, connecting routines, matrixes, exercises, videos, playback, and progress through one clear system.",
+        "image": "/projects/repnsets/web_home_page.jpg",
+        "href": "/projects/repnsets"
       },
       {
-        "name": "Finimize Experience Work",
-        "domain": "Fintech",
-        "impact": "Implemented scalable frontend and integration patterns for high-quality financial product experiences.",
-        "image": "/images/case-fintech.svg"
-      },
-      {
-        "name": "Juiceplus Mobile Flows",
-        "domain": "Fitness",
-        "impact": "Improved mobile usability and delivery quality in cross-functional product teams.",
-        "image": "/images/case-fitness.svg"
+        "name": "Fit2Go",
+        "domain": "Healthy Meal Subscription",
+        "impact": "A prepared-meal ordering product where I was brought in to improve and gamify the plan-selection flow around goals, allergies, preferences, and weekly meal quantity.",
+        "image": "/projects/fit2go/web_home_page.jpg",
+        "href": "/fit2go"
       }
     ]
   },
@@ -579,5 +573,93 @@
         }
       ]
     }
-  ]
+  ],
+  "technologiesSection": {
+    "title": "Tools I Build With",
+    "description": "Production tools across frontend, mobile, backend, data, cloud, and delivery workflows."
+  },
+  "projects": {
+    "repnsets": {
+      "name": "Rep&Sets",
+      "tagline": "Training structure that looks as sharp as it performs.",
+      "category": "Editorial Athlete Platform",
+      "summary": "Rep&Sets is a training product for coaches and athletes, connecting routines, matrixes, exercises, videos, and progress across web and mobile in one consistent system.",
+      "liveUrl": "https://repnsets.com",
+      "heroImage": "/projects/repnsets/web_home_page.jpg",
+      "overview": [
+        "The product had to feel premium while still being practical during real workout sessions.",
+        "The web app covers routine planning, matrixes, exercise libraries, videos, and workspace-level structure.",
+        "The mobile app brings that plan into the session with active routine progress, day detail, and exercise playback."
+      ],
+      "highlights": [
+        "Cross-platform product thinking across web, iOS, and Android.",
+        "A strong visual direction with a dark editorial look and orange action cues.",
+        "Product flows that connect planning, playback, sharing, and progression instead of treating them as separate tools."
+      ],
+      "capabilities": [
+        "Routine planning and workspace organization",
+        "Calendar and matrix views for training structure",
+        "Exercise and video libraries for session clarity",
+        "Workout playback with exercise-level detail",
+        "Mobile progress tracking for active plans"
+      ],
+      "gallery": {
+        "web": [
+          "/projects/repnsets/web_home_page.jpg",
+          "/projects/repnsets/web_1.jpg",
+          "/projects/repnsets/web_2.jpg",
+          "/projects/repnsets/web_3.jpg",
+          "/projects/repnsets/web_4.jpg"
+        ],
+        "ios": [
+          "/projects/repnsets/mobile_ios_1.png",
+          "/projects/repnsets/mobile_ios_2.png",
+          "/projects/repnsets/mobile_ios_4.png",
+          "/projects/repnsets/mobile_ios_5.png"
+        ],
+        "android": [
+          "/projects/repnsets/mobile_android_1.png",
+          "/projects/repnsets/mobile_android_2.png",
+          "/projects/repnsets/mobile_android_4.png"
+        ]
+      }
+    },
+    "fit2go": {
+      "name": "Fit2Go",
+      "tagline": "Gamifying a healthier weekly meal planning flow.",
+      "category": "Healthy Meal Subscription",
+      "summary": "Fit2Go is a prepared-meal ordering product built around weekly meal plans, nutrition targets, and pre-order delivery. My contribution focused on improving and gamifying the plan-selection experience.",
+      "liveUrl": "https://fit2gothailand.com/",
+      "heroImage": "/projects/fit2go/web_home_page.jpg",
+      "overview": [
+        "Fit2Go offers high-protein, low-calorie prepared meals with weekly ordering and subscription flows.",
+        "The product helps users choose plans based on goals, then preorder meals for the week with nutrition already computed across calories, carbs, and protein.",
+        "My role was focused on improving how users figure out what they should order based on factors like weight, age, allergies, food preferences, and spice tolerance."
+      ],
+      "highlights": [
+        "I was brought in to improve one key product flow, not to build the full platform.",
+        "The main challenge was reducing friction in a decision-heavy meal planning experience.",
+        "The solution direction was to make the process feel more guided, more playful, and easier to finish."
+      ],
+      "rolePoints": [
+        "Improved the calculator and recommendation journey around dietary goals and personal inputs.",
+        "Helped shape a more gamified experience so users could move through meal-plan selection with less drop-off.",
+        "Focused on the part of the journey where users estimate what and how many meals they may need in a week."
+      ],
+      "contextPoints": [
+        "Users need help deciding based on body metrics and food constraints, not just by browsing meals manually.",
+        "The product includes customization around allergens, ingredients, and dietary preferences.",
+        "Because meals are pre-ordered and scheduled, the recommendation step has a strong effect on conversion."
+      ],
+      "gallery": {
+        "web": [
+          "/projects/fit2go/web_home_page.jpg",
+          "/projects/fit2go/web_1.jpg",
+          "/projects/fit2go/web_2.jpg",
+          "/projects/fit2go/web_3.jpg",
+          "/projects/fit2go/web_4.jpg"
+        ]
+      }
+    }
+  }
 }

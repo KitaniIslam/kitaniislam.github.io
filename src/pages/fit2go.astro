@@ -1,0 +1,119 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import portfolio from '../data/portfolio.json';
+
+const project = portfolio.projects.fit2go;
+const toBasePath = (value: string) => {
+  if (typeof value !== 'string' || !value.startsWith('/')) return value;
+  const base = import.meta.env.BASE_URL;
+  const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  return `${normalizedBase}${value}`;
+};
+---
+
+<MainLayout title={`${project.name} | Product Work`} description={project.summary}>
+  <div class="project-page-shell">
+    <section class="project-hero">
+      <div class="project-hero-copy">
+        <a href={toBasePath('/#case-study')} class="project-back-link">← Back to portfolio</a>
+        <p class="project-eyebrow">{project.category}</p>
+        <h1>{project.name}</h1>
+        <p class="project-tagline">{project.tagline}</p>
+        <p class="project-summary">{project.summary}</p>
+        <div class="project-hero-facts">
+          <span>Prepared Meals</span>
+          <span>Weekly Pre-order</span>
+          <span>Guided Plan Selection</span>
+        </div>
+        <div class="project-hero-actions">
+          <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit Live Project</a>
+          <a class="button project-secondary-button" href={toBasePath('/#footer')}>Let&apos;s Talk</a>
+        </div>
+      </div>
+
+      <div class="project-hero-visual">
+        <img src={toBasePath(project.heroImage)} alt={`${project.name} homepage`} loading="eager" />
+      </div>
+    </section>
+
+    <section class="project-meta-strip">
+      <article>
+        <span>Focus</span>
+        <p>Meal-plan selection, recommendation logic, and smoother decision-making</p>
+      </article>
+      <article>
+        <span>Role</span>
+        <p>Improve and gamify one core user flow rather than build the full platform</p>
+      </article>
+      <article>
+        <span>Live Site</span>
+        <p>Prepared meals, subscriptions, delivery slots, and nutrition-based weekly ordering</p>
+      </article>
+    </section>
+
+    <section class="project-story-grid">
+      <div class="project-story-panel">
+        <p class="project-section-label">Overview</p>
+        <div class="project-story-list">
+          {project.overview.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+      </div>
+
+      <div class="project-story-panel">
+        <p class="project-section-label">What Stands Out</p>
+        <div class="project-highlight-list">
+          {project.highlights.map((item, index) => (
+            <div class="project-highlight-item">
+              <p class="project-highlight-index">0{index + 1}</p>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-story-grid">
+      <div class="project-story-panel">
+        <p class="project-section-label">My Role</p>
+        <div class="project-story-list">
+          {project.rolePoints.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+      </div>
+
+      <div class="project-story-panel">
+        <p class="project-section-label">Product Context</p>
+        <div class="project-story-list">
+          {project.contextPoints.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery-section">
+      <div class="section-head">
+        <h2>Web Experience</h2>
+        <p>The live product covers weekly ordering, nutrition-aware meal planning, subscription flows, and a guided selection journey for prepared meals.</p>
+      </div>
+
+      <div class="project-gallery-grid web">
+        {project.gallery.web.map((image) => (
+          <figure class="project-shot wide">
+            <img src={toBasePath(image)} alt={`${project.name} web screenshot`} loading="lazy" />
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-cta-panel">
+      <p class="project-section-label">Live Product</p>
+      <h2>Visit the website</h2>
+      <p>Open Fit2Go to see the live product, subscription structure, and meal-plan journey in context.</p>
+      <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit fit2gothailand.com</a>
+    </section>
+  </div>
+</MainLayout>

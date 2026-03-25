@@ -5,8 +5,8 @@ import portfolio from '../data/portfolio.json';
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Tech', href: '#tech' },
-  { label: 'Case Study', href: '#case-study' },
+  { label: 'Work', href: '#case-study' },
+  { label: 'Stack', href: '#tech' },
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#footer' }
 ];
@@ -80,20 +80,70 @@ const toBasePath = (value: string) => {
         </div>
 
         <div class="service-grid">
-          {portfolio.services.items.map((service) => (
-            <article class="service-card">
-              <img src={toBasePath(service.illustration)} alt={`${service.title} illustration`} loading="lazy" style={{background: '#0B162B'}} />
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
+          {portfolio.services.items.map((service, index) => (
+            <article class="service-feature">
+              <p class="service-index">0{index + 1}</p>
+              <div class="service-copy">
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
+      <section id="case-study" class="section-spacing section-block">
+        <div class="section-head">
+          <h2>{portfolio.caseStudies.title}</h2>
+          <p>{portfolio.caseStudies.description}</p>
+        </div>
+
+        <div class={`carousel project-carousel ${portfolio.caseStudies.items.length === 1 ? 'single-card' : ''}`} data-carousel>
+          {portfolio.caseStudies.items.length > 1 && (
+            <button class="carousel-btn prev" aria-label="Previous project card" data-prev>←</button>
+          )}
+          <div class="carousel-viewport">
+            <div class="carousel-track" data-track>
+              {portfolio.caseStudies.items.map((study) => (
+                <a class="project-card" data-case-card href={toBasePath(study.href)}>
+                  <div class="project-card-media">
+                    <img src={toBasePath(study.image)} alt={study.name} loading="lazy" />
+                  </div>
+                  <div class="project-card-body">
+                    <p class="chip">{study.domain}</p>
+                    <h3>{study.name}</h3>
+                    <p>{study.impact}</p>
+                    <span class="project-card-link">View project</span>
+                  </div>
+                </a>
+              ))}
+              <article class="project-card project-card-placeholder" data-case-card aria-label="More projects coming soon">
+                <div class="project-card-media project-card-placeholder-media">
+                  <div class="project-card-placeholder-mark" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="project-card-body">
+                  <p class="chip">More Work Coming Soon</p>
+                  <h3>More projects coming soon</h3>
+                  <p>Additional product work, redesigns, and delivery stories will be added here as more case studies are prepared.</p>
+                  <span class="project-card-link project-card-link-muted">In progress</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          {portfolio.caseStudies.items.length > 1 && (
+            <button class="carousel-btn next" aria-label="Next project card" data-next>→</button>
+          )}
+        </div>
+      </section>
+
       <section id="tech" class="section-spacing section-block tech-section">
         <div class="section-head">
-          <h2>Technologies</h2>
-          <p>Tools I use in production, from frontend to backend and cloud workflows.</p>
+          <h2>{portfolio.technologiesSection.title}</h2>
+          <p>{portfolio.technologiesSection.description}</p>
           <button class="tech-switch" type="button" aria-pressed="true" data-tech-toggle>
             Animation: ON
           </button>
@@ -134,39 +184,6 @@ const toBasePath = (value: string) => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="case-study" class="section-spacing section-block">
-        <div class="section-head">
-          <h2>{portfolio.caseStudies.title}</h2>
-          <p>Selected examples from product work and delivery impact.</p>
-        </div>
-
-        <div class="carousel" data-carousel>
-          <button class="carousel-btn prev" aria-label="Previous case study page" data-prev>←</button>
-          <div class="carousel-viewport">
-            <div class="carousel-track" data-track>
-              {portfolio.caseStudies.items.map((study) => (
-                <article
-                  class="case-card"
-                  data-case-card
-                  data-name={study.name}
-                  data-domain={study.domain}
-                  data-description={study.impact}
-                  data-image={toBasePath(study.image)}
-                >
-                  <img src={toBasePath(study.image)} alt={study.name} loading="lazy" />
-                  <div>
-                    <p class="chip">{study.domain}</p>
-                    <h3>{study.name}</h3>
-                    <p>{study.impact}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <button class="carousel-btn next" aria-label="Next case study page" data-next>→</button>
         </div>
       </section>
 
@@ -271,18 +288,6 @@ const toBasePath = (value: string) => {
       </div>
     </footer>
 
-    <div class="case-modal" data-case-modal hidden>
-      <div class="case-modal-backdrop" data-case-close></div>
-      <article class="case-modal-panel" role="dialog" aria-modal="true" aria-label="Case study details">
-        <button class="case-modal-close" type="button" aria-label="Close modal" data-case-close>✕</button>
-        <img class="case-modal-image" src="" alt="" data-case-image />
-        <div class="case-modal-content">
-          <p class="chip" data-case-domain></p>
-          <h3 data-case-title></h3>
-          <p data-case-description></p>
-        </div>
-      </article>
-    </div>
   </div>
 
   <script is:inline>
@@ -339,8 +344,8 @@ const toBasePath = (value: string) => {
     setTimelineMode(false);
     timelineToggle?.addEventListener('click', () => setTimelineMode(!timelineExpanded));
 
-    const carousel = document.querySelector('[data-carousel]');
-    if (carousel) {
+    const carousels = document.querySelectorAll('[data-carousel]');
+    carousels.forEach((carousel) => {
       const track = carousel.querySelector('[data-track]');
       const viewport = carousel.querySelector('.carousel-viewport');
       const cards = track ? Array.from(track.querySelectorAll('[data-case-card]')) : [];
@@ -351,7 +356,7 @@ const toBasePath = (value: string) => {
       let wheelLock = false;
       let touchStartX = 0;
 
-      const cardsPerView = () => (window.matchMedia('(min-width: 1100px)').matches ? 3 : 1);
+      const cardsPerView = () => (window.matchMedia('(min-width: 1100px)').matches ? 2 : 1);
       const maxIndex = () => Math.max(0, total - cardsPerView());
 
       const update = () => {
@@ -415,37 +420,6 @@ const toBasePath = (value: string) => {
       });
 
       update();
-
-      const modal = document.querySelector('[data-case-modal]');
-      const modalImage = modal?.querySelector('[data-case-image]');
-      const modalTitle = modal?.querySelector('[data-case-title]');
-      const modalDomain = modal?.querySelector('[data-case-domain]');
-      const modalDescription = modal?.querySelector('[data-case-description]');
-      const closeTargets = modal?.querySelectorAll('[data-case-close]') ?? [];
-
-      const closeModal = () => {
-        if (!modal) return;
-        modal.hidden = true;
-        document.body.style.overflow = '';
-      };
-
-      cards.forEach((card) => {
-        card.addEventListener('click', () => {
-          if (!modal || !modalImage || !modalTitle || !modalDomain || !modalDescription) return;
-          modalImage.src = card.getAttribute('data-image') || '';
-          modalImage.alt = card.getAttribute('data-name') || 'Case study image';
-          modalTitle.textContent = card.getAttribute('data-name') || '';
-          modalDomain.textContent = card.getAttribute('data-domain') || '';
-          modalDescription.textContent = card.getAttribute('data-description') || '';
-          modal.hidden = false;
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      closeTargets.forEach((target) => target.addEventListener('click', closeModal));
-      window.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeModal();
-      });
-    }
+    });
   </script>
 </MainLayout>
