@@ -159,6 +159,7 @@ a {
   background: var(--orange);
   border-color: var(--orange);
   color: #ffffff;
+  cursor: pointer;
 }
 
 main {
@@ -949,6 +950,10 @@ h3 {
   font-size: 0.95rem;
 }
 
+.footer-phone {
+  margin-top: 2px;
+}
+
 .footer-social-icons {
   display: inline-flex;
   gap: 8px;
@@ -966,6 +971,18 @@ h3 {
   justify-content: center;
 }
 
+.footer-icon-link[aria-label="LinkedIn"] {
+  color: #0077b5;
+  border-color: rgba(0, 119, 181, 0.22);
+  background: rgba(0, 119, 181, 0.08);
+}
+
+.footer-icon-link[aria-label="WhatsApp"] {
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.22);
+  background: rgba(37, 211, 102, 0.1);
+}
+
 .footer-icon-link svg {
   width: 18px;
   height: 18px;
@@ -975,6 +992,190 @@ h3 {
   color: var(--text);
   border-color: #c4c8bf;
   background: #f6f7f3;
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+}
+
+.contact-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 22, 43, 0.52);
+}
+
+.contact-modal-panel {
+  position: relative;
+  width: min(560px, 92vw);
+  padding: 28px;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(11, 22, 43, 0.08);
+  display: grid;
+  gap: 14px;
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d4d6ce;
+  background: #ffffff;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.contact-modal-eyebrow {
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-modal-panel h2 {
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  line-height: 1;
+}
+
+.contact-modal-description {
+  color: var(--muted);
+  max-width: 48ch;
+}
+
+.contact-modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.contact-option-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid #d8dbd2;
+  background: #fafaf6;
+  color: inherit;
+}
+
+.contact-option-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.contact-option-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-option-icon-email {
+  color: #0b162b;
+  background: #eef1eb;
+}
+
+.contact-option-icon-whatsapp {
+  color: #ffffff;
+  background: #25d366;
+}
+
+.contact-option-label {
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-option-card strong {
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+
+.contact-option-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.contact-option-whatsapp {
+  background: linear-gradient(180deg, #effcf3 0%, #e3f9ea 100%);
+  border-color: rgba(37, 211, 102, 0.42);
+}
+
+.contact-option-whatsapp .contact-option-label {
+  color: #179c4c;
+}
+
+.contact-option-whatsapp strong {
+  color: #12783b;
+}
+
+.contact-option-whatsapp p {
+  color: #2f6a45;
+}
+
+@media (max-width: 720px) {
+  .contact-modal {
+    padding: 16px;
+    place-items: center;
+  }
+
+  .contact-modal-panel {
+    width: min(100%, 100%);
+    padding: 22px 18px 18px;
+    border-radius: 24px;
+    gap: 12px;
+  }
+
+  .contact-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-modal-panel h2 {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+    line-height: 0.98;
+    max-width: 10ch;
+    padding-right: 42px;
+  }
+
+  .contact-modal-description {
+    max-width: 28ch;
+    font-size: 0.98rem;
+  }
+
+  .contact-modal-actions {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-option-card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .contact-option-card strong {
+    font-size: 1.05rem;
+  }
+
+  .contact-option-card p {
+    font-size: 0.92rem;
+  }
 }
 
 .project-page-shell {

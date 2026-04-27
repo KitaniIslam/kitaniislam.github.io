@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import ContactModal from '../../components/ContactModal.astro';
 import portfolio from '../../data/portfolio.json';
 
 const project = portfolio.projects.repnsets;
@@ -27,7 +28,7 @@ const toBasePath = (value: string) => {
         </div>
         <div class="project-hero-actions">
           <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit Live Project</a>
-          <a class="button project-secondary-button" href={toBasePath('/#footer')}>Let&apos;s Talk</a>
+          <button class="button project-secondary-button" type="button" data-contact-open>Let&apos;s Talk</button>
         </div>
       </div>
 
@@ -127,4 +128,5 @@ const toBasePath = (value: string) => {
       <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit repnsets.com</a>
     </section>
   </div>
+  <ContactModal email={portfolio.meta.email} whatsappHref={portfolio.footer.socials.find((social) => social.icon === 'wa')?.href ?? ''} />
 </MainLayout>

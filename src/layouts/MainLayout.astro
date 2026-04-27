@@ -19,5 +19,29 @@ import '../styles/global.css';
   </head>
   <body>
     <slot />
+    <script is:inline>
+      const contactModal = document.querySelector('[data-contact-modal]');
+      if (contactModal) {
+        const openTriggers = document.querySelectorAll('[data-contact-open]');
+        const closeTriggers = contactModal.querySelectorAll('[data-contact-close]');
+        const openModal = () => {
+          contactModal.hidden = false;
+          document.body.style.overflow = 'hidden';
+        };
+        const closeModal = () => {
+          contactModal.hidden = true;
+          document.body.style.overflow = '';
+        };
+        openTriggers.forEach((trigger) => {
+          trigger.addEventListener('click', openModal);
+        });
+        closeTriggers.forEach((trigger) => {
+          trigger.addEventListener('click', closeModal);
+        });
+        window.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') closeModal();
+        });
+      }
+    </script>
   </body>
 </html>
