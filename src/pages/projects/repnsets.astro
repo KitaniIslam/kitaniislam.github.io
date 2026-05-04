@@ -128,5 +128,10 @@ const toBasePath = (value: string) => {
       <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit repnsets.com</a>
     </section>
   </div>
-  <ContactModal email={portfolio.meta.email} whatsappHref={portfolio.footer.socials.find((social) => social.icon === 'wa')?.href ?? ''} />
+  <ContactModal
+    email={portfolio.meta.email}
+    whatsappHref={portfolio.footer.socials.find((social) => social.icon === 'wa')?.href ?? ''}
+    contraUsername="kitani_islam"
+    contraAnalyticsUserId="9d0659f2-f1ac-4bdf-b684-e1a582a2ed65"
+  />
 </MainLayout>

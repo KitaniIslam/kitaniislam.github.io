@@ -2,9 +2,11 @@
 interface Props {
   email: string;
   whatsappHref: string;
+  contraUsername: string;
+  contraAnalyticsUserId: string;
 }
 
-const { email, whatsappHref } = Astro.props;
+const { email, whatsappHref, contraUsername, contraAnalyticsUserId } = Astro.props;
 ---
 
 <div class="contact-modal" data-contact-modal hidden>
@@ -36,6 +38,15 @@ const { email, whatsappHref } = Astro.props;
         <strong>Chat on WhatsApp</strong>
         <p>Open a direct conversation</p>
       </a>
+    </div>
+    <div class="contact-modal-alt">
+      <p class="contact-modal-alt-label">or</p>
+      <div
+        class="contra-hire-me-button"
+        data-analyticsuserid={contraAnalyticsUserId}
+        data-theme="light"
+        data-username={contraUsername}
+      ></div>
     </div>
   </article>
 </div>

@@ -934,9 +934,30 @@ h3 {
 
 .footer-horizontal {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 18px;
+  gap: 24px;
+}
+
+.footer-left {
+  display: grid;
+  gap: 16px;
+}
+
+.footer-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  justify-self: end;
+}
+
+.footer-contra {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-contra .contra-hire-me-button {
+  min-width: 160px;
 }
 
 .footer-identity h2 {
@@ -948,6 +969,26 @@ h3 {
   margin-top: 6px;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.footer-email-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-email-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-email-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 .footer-phone {
@@ -1011,6 +1052,8 @@ h3 {
 .contact-modal-panel {
   position: relative;
   width: min(560px, 92vw);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
   padding: 28px;
   border-radius: 28px;
   background: #ffffff;
@@ -1053,18 +1096,23 @@ h3 {
 .contact-modal-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
   gap: 14px;
   margin-top: 8px;
+  align-items: stretch;
 }
 
 .contact-option-card {
   display: grid;
+  grid-template-rows: auto auto auto 1fr;
   gap: 8px;
+  align-content: start;
   padding: 18px;
   border-radius: 22px;
   border: 1px solid #d8dbd2;
   background: #fafaf6;
   color: inherit;
+  min-height: 220px;
 }
 
 .contact-option-icon {
@@ -1127,6 +1175,20 @@ h3 {
   color: #2f6a45;
 }
 
+.contact-modal-alt {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.contact-modal-alt-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
 @media (max-width: 720px) {
   .contact-modal {
     padding: 16px;
@@ -1135,6 +1197,7 @@ h3 {
 
   .contact-modal-panel {
     width: min(100%, 100%);
+    max-height: calc(100vh - 32px);
     padding: 22px 18px 18px;
     border-radius: 24px;
     gap: 12px;
@@ -1148,9 +1211,9 @@ h3 {
   }
 
   .contact-modal-panel h2 {
-    font-size: clamp(1.9rem, 8vw, 2.5rem);
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
     line-height: 0.98;
-    max-width: 10ch;
+    max-width: 12ch;
     padding-right: 42px;
   }
 
@@ -1167,6 +1230,7 @@ h3 {
   .contact-option-card {
     padding: 16px;
     border-radius: 20px;
+    min-height: 0;
   }
 
   .contact-option-card strong {
@@ -1571,6 +1635,15 @@ h3 {
     align-items: start;
   }
 
+  .footer-left {
+    gap: 12px;
+  }
+
+  .footer-actions {
+    flex-wrap: wrap;
+    justify-self: start;
+  }
+
   .footer-social-icons {
     justify-content: flex-start;
   }
@@ -1671,6 +1744,10 @@ h3 {
 
   .footer-horizontal .button {
     width: auto;
+  }
+
+  .footer-actions {
+    width: 100%;
   }
 
   .button,
