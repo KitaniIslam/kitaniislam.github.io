@@ -90,13 +90,20 @@ a {
   letter-spacing: 0.04em;
 }
 
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .menu-toggle {
   display: none;
-  border: 1px solid #ced1c8;
-  background: #ffffff;
+  border: 0;
+  background: transparent;
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 0;
   align-items: center;
   justify-content: center;
   gap: 4px;
@@ -120,11 +127,29 @@ a {
 }
 
 .topnav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   padding: 7px 12px;
   border-radius: 999px;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  color: #ec7a1a;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
 }
 
 .topnav a:hover {
@@ -1670,7 +1695,7 @@ h3 {
 
   .topnav a {
     border-radius: 10px;
-    padding: 10px 12px;
+    padding: 11px 12px;
   }
 
   .service-grid {
@@ -1740,6 +1765,22 @@ h3 {
 
   .tech-section {
     min-height: auto;
+    padding-block: 34px 42px;
+  }
+
+  .tech-section .section-head {
+    gap: 16px;
+    margin-bottom: 34px;
+  }
+
+  .tech-section .logo-marquee {
+    gap: 16px;
+    padding-block: 8px;
+  }
+
+  .tech-section .tech-switch {
+    padding: 7px 12px;
+    font-size: 0.8rem;
   }
 
   .footer-horizontal {
