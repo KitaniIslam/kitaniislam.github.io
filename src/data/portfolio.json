@@ -36,6 +36,20 @@
       }
     ]
   },
+  "recommendations": {
+    "title": "What People Say",
+    "description": "Feedback from people I have worked with. Tap a card to view the recommendation source.",
+    "linkedinHref": "https://www.linkedin.com/in/kitani-islam-a0111a14b/details/recommendations/",
+    "items": [
+      {
+        "name": "Ismail Hamdad",
+        "position": "Entrepreneur | AI Infrastructure & Product Strategy",
+        "date": "June 22, 2020",
+        "quote": "Kitani was instrumental in developing Adsum Networks back-end cloud platform.",
+        "summary": "Ismail highlighted Kitani as a dedicated team player, fast learner, independent problem solver, high-energy collaborator, and someone reliable under pressure."
+      }
+    ]
+  },
   "technologies": [
     {
       "name": "React",
@@ -338,11 +352,6 @@
         "label": "LinkedIn",
         "icon": "in",
         "href": "https://www.linkedin.com/in/kitani-islam-a0111a14b/"
-      },
-      {
-        "label": "LinkedIn Recommendations",
-        "icon": "rec",
-        "href": "https://www.linkedin.com/in/kitani-islam-a0111a14b/details/recommendations/"
       },
       {
         "label": "WhatsApp",

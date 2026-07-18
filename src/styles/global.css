@@ -506,6 +506,93 @@ h3 {
   max-width: 46ch;
 }
 
+.recommendations-section {
+  overflow: visible;
+}
+
+.recommendations-head {
+  max-width: 740px;
+}
+
+.recommendations-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(320px, 420px);
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 14px;
+  scrollbar-width: thin;
+}
+
+.recommendation-card {
+  min-height: 240px;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid rgba(11, 22, 43, 0.12);
+  border-radius: 18px;
+  background: #ffffff;
+  scroll-snap-align: start;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(236, 122, 26, 0.38);
+  background: #fffdf9;
+}
+
+.recommendation-quote {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.recommendation-summary {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.recommendation-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.15;
+  margin-top: 8px;
+}
+
+.recommendation-card div p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.recommendation-card .recommendation-date {
+  color: #9b5622;
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.recommendation-card-empty {
+  background: #fafaf6;
+}
+
+.recommendation-card-cta {
+  border-color: rgba(236, 122, 26, 0.28);
+  background: #fff8f1;
+}
+
+.recommendation-card-cta .recommendation-quote,
+.recommendation-card-cta h3 {
+  color: #9b5622;
+}
+
 .logo-marquee {
   display: grid;
   gap: 10px;
@@ -1024,20 +1111,9 @@ h3 {
   background: rgba(37, 211, 102, 0.1);
 }
 
-.footer-icon-link[aria-label="LinkedIn Recommendations"] {
-  color: #ec7a1a;
-  border-color: rgba(236, 122, 26, 0.24);
-  background: rgba(236, 122, 26, 0.1);
-}
-
 .footer-icon-link svg {
   width: 18px;
   height: 18px;
-}
-
-.footer-icon-text {
-  font-size: 1rem;
-  line-height: 1;
 }
 
 .footer-icon-link:hover {
@@ -1601,6 +1677,17 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .recommendations-head {
+    max-width: 100%;
+  }
+
+  .recommendations-scroll {
+    grid-auto-columns: minmax(min(82vw, 390px), 1fr);
+    margin-inline: 0;
+    padding: 8px 4px 18px;
+    scroll-padding-inline: 4px;
+  }
+
   .hero {
     padding: 60px 0 100px;
   }
@@ -1804,6 +1891,19 @@ h3 {
 
   .footer-horizontal .button {
     width: auto;
+  }
+
+  .recommendation-card {
+    min-height: 260px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .recommendations-scroll {
+    grid-auto-columns: 82vw;
+    gap: 12px;
+    padding: 8px 6px 18px;
+    scroll-padding-inline: 6px;
   }
 
   .footer-actions {

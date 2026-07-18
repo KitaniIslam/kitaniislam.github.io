@@ -127,6 +127,37 @@ const structuredData = {
         </div>
       </section>
 
+      {portfolio.recommendations.items.length > 0 && (
+        <section id="recommendations" class="section-spacing section-block recommendations-section">
+          <div class="section-head recommendations-head">
+            <h2>{portfolio.recommendations.title}</h2>
+            <p>{portfolio.recommendations.description}</p>
+          </div>
+
+          <div class="recommendations-scroll" aria-label="LinkedIn recommendations">
+            {portfolio.recommendations.items.map((recommendation) => (
+              <a class="recommendation-card" href={portfolio.recommendations.linkedinHref} target="_blank" rel="noreferrer">
+                <p class="recommendation-quote">“{recommendation.quote}”</p>
+                {recommendation.summary && <p class="recommendation-summary">{recommendation.summary}</p>}
+                <div>
+                  <h3>{recommendation.name}</h3>
+                  <p>{recommendation.position}</p>
+                  {recommendation.date && <p class="recommendation-date">{recommendation.date}</p>}
+                </div>
+              </a>
+            ))}
+            <a class="recommendation-card recommendation-card-cta" href={portfolio.recommendations.linkedinHref} target="_blank" rel="noreferrer">
+              <p class="recommendation-quote">Worked with me?</p>
+              <p class="recommendation-summary">Leave a short recommendation about the project, collaboration, or delivery experience.</p>
+              <div>
+                <h3>Add your feedback</h3>
+                <p>Opens LinkedIn recommendations</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      )}
+
       <section id="case-study" class="section-spacing section-block">
         <div class="section-head">
           <h2>{portfolio.caseStudies.title}</h2>
@@ -322,9 +353,6 @@ const structuredData = {
                       <circle cx="12" cy="12" r="4" />
                       <circle cx="17.5" cy="6.5" r="1" />
                     </svg>
-                  )}
-                  {social.icon === 'rec' && (
-                    <span class="footer-icon-text" aria-hidden="true">R</span>
                   )}
                 </a>
               ))}
