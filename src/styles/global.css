@@ -25,6 +25,7 @@ body {
   margin: 0;
   min-height: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 116px;
 }
 
 body {
@@ -332,6 +333,7 @@ h3 {
 .section-block {
   display: grid;
   gap: 26px;
+  scroll-margin-top: 116px;
 }
 
 .awards-section {
@@ -1653,6 +1655,15 @@ h3 {
 }
 
 @media (max-width: 920px) {
+  html,
+  body {
+    scroll-padding-top: 126px;
+  }
+
+  .section-block {
+    scroll-margin-top: 126px;
+  }
+
   .topbar {
     grid-template-columns: auto 1fr auto;
     border-radius: 100px;
