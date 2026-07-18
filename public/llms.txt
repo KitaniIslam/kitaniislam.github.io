@@ -3,8 +3,9 @@
 Kitani Islam is a lead full-stack engineer with 9+ years of experience building web, mobile, backend, and AI-enabled products across North Africa, Europe, and Asia.
 
 Primary strengths:
-- Frontend and mobile product engineering: React, React Native, Next.js, Vue, Astro, TypeScript.
-- Backend systems and APIs: Node.js, REST, GraphQL, database design, integrations, authorization, product infrastructure.
+- Frontend and mobile product engineering: React, React Native, Next.js, TypeScript, Vue, Astro.
+- Backend systems and APIs: Node.js, GraphQL, REST APIs, PostgreSQL, database design, integrations, authorization, product infrastructure.
+- Cloud and delivery: AWS, Docker, deployment workflows, release planning, production product delivery.
 - AI integration and RAG workflows: practical AI product features, retrieval workflows, internal tools, automation.
 - Technical leadership: mentoring, release planning, code review, product feedback translation, client delivery.
 
