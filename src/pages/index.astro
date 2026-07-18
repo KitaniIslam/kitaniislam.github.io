@@ -101,7 +101,15 @@ const structuredData = {
           <div class="hero-visual">
             <div class="hero-image-wrapper">
               <div class="hero-image-bg"></div>
-              <img src={toBasePath('/images/me.jpg')} alt={portfolio.meta.name} class="hero-image" />
+              <img
+                src={toBasePath('/images/me.webp')}
+                alt={portfolio.meta.name}
+                class="hero-image"
+                width="865"
+                height="865"
+                decoding="async"
+                fetchpriority="high"
+              />
               <div class="hero-image-decoration"></div>
             </div>
           </div>
@@ -173,7 +181,7 @@ const structuredData = {
               {portfolio.caseStudies.items.map((study) => (
                 <a class="project-card" data-case-card href={toBasePath(study.href)}>
                   <div class="project-card-media">
-                    <img src={toBasePath(study.image)} alt={study.name} loading="lazy" />
+                    <img src={toBasePath(study.image)} alt={study.name} loading="lazy" decoding="async" />
                   </div>
                   <div class="project-card-body">
                     <p class="chip">{study.domain}</p>
@@ -219,7 +227,7 @@ const structuredData = {
           <div class="logo-track left">
             {[...firstTechRow, ...firstTechRow].map((tech) => (
               <article class="logo-item">
-                <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" />
+                <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
                 <span>{tech.name}</span>
               </article>
             ))}
@@ -227,7 +235,7 @@ const structuredData = {
           <div class="logo-track right">
             {[...secondTechRow, ...secondTechRow].map((tech) => (
               <article class="logo-item">
-                <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" />
+                <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
                 <span>{tech.name}</span>
               </article>
             ))}
@@ -242,7 +250,7 @@ const structuredData = {
                 <div class="tech-row">
                   {(group.items ?? []).map((tech) => (
                     <article class="logo-item">
-                      <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" />
+                      <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
                       <span>{tech.name}</span>
                     </article>
                   ))}

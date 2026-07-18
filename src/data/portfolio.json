@@ -236,21 +236,21 @@
         "name": "Rep&Sets",
         "domain": "Editorial Athlete Platform",
         "impact": "A cross-platform training product for coaches and athletes, connecting routines, matrixes, exercises, videos, playback, and progress through one clear system.",
-        "image": "/projects/repnsets/web_home_page.jpg",
+        "image": "/projects/repnsets/web_home_page.webp",
         "href": "/projects/repnsets"
       },
       {
         "name": "Fit2Go",
         "domain": "Healthy Meal Subscription",
         "impact": "A prepared-meal ordering product where I was brought in to improve and gamify the plan-selection flow around goals, allergies, preferences, and weekly meal quantity.",
-        "image": "/projects/fit2go/web_home_page.jpg",
+        "image": "/projects/fit2go/web_home_page.webp",
         "href": "/fit2go"
       },
       {
         "name": "GoLivry",
         "domain": "Delivery & Cash on Delivery",
         "impact": "A logistics landing experience for Guinea, presenting delivery coverage, cash-on-delivery collection, merchant onboarding, and WhatsApp-led conversion in one focused flow.",
-        "image": "/projects/golivry/web_card.png",
+        "image": "/projects/golivry/web_card.webp",
         "href": "/projects/golivry"
       }
     ]
@@ -599,7 +599,7 @@
       "category": "Editorial Athlete Platform",
       "summary": "Rep&Sets is a training product for coaches and athletes, connecting routines, matrixes, exercises, videos, and progress across web and mobile in one consistent system.",
       "liveUrl": "https://repnsets.com",
-      "heroImage": "/projects/repnsets/web_home_page.jpg",
+      "heroImage": "/projects/repnsets/web_home_page.webp",
       "overview": [
         "The product had to feel premium while still being practical during real workout sessions.",
         "The web app covers routine planning, matrixes, exercise libraries, videos, and workspace-level structure.",
@@ -619,22 +619,22 @@
       ],
       "gallery": {
         "web": [
-          "/projects/repnsets/web_home_page.jpg",
-          "/projects/repnsets/web_1.jpg",
-          "/projects/repnsets/web_2.jpg",
-          "/projects/repnsets/web_3.jpg",
-          "/projects/repnsets/web_4.jpg"
+          "/projects/repnsets/web_home_page.webp",
+          "/projects/repnsets/web_1.webp",
+          "/projects/repnsets/web_2.webp",
+          "/projects/repnsets/web_3.webp",
+          "/projects/repnsets/web_4.webp"
         ],
         "ios": [
-          "/projects/repnsets/mobile_ios_1.png",
-          "/projects/repnsets/mobile_ios_2.png",
-          "/projects/repnsets/mobile_ios_4.png",
-          "/projects/repnsets/mobile_ios_5.png"
+          "/projects/repnsets/mobile_ios_1.webp",
+          "/projects/repnsets/mobile_ios_2.webp",
+          "/projects/repnsets/mobile_ios_4.webp",
+          "/projects/repnsets/mobile_ios_5.webp"
         ],
         "android": [
-          "/projects/repnsets/mobile_android_1.png",
-          "/projects/repnsets/mobile_android_2.png",
-          "/projects/repnsets/mobile_android_4.png"
+          "/projects/repnsets/mobile_android_1.webp",
+          "/projects/repnsets/mobile_android_2.webp",
+          "/projects/repnsets/mobile_android_4.webp"
         ]
       }
     },
@@ -644,7 +644,7 @@
       "category": "Healthy Meal Subscription",
       "summary": "Fit2Go is a prepared-meal ordering product built around weekly meal plans, nutrition targets, and pre-order delivery. My contribution focused on improving and gamifying the plan-selection experience.",
       "liveUrl": "https://fit2gothailand.com/",
-      "heroImage": "/projects/fit2go/web_home_page.jpg",
+      "heroImage": "/projects/fit2go/web_home_page.webp",
       "overview": [
         "Fit2Go offers high-protein, low-calorie prepared meals with weekly ordering and subscription flows.",
         "The product helps users choose plans based on goals, then preorder meals for the week with nutrition already computed across calories, carbs, and protein.",
@@ -667,11 +667,11 @@
       ],
       "gallery": {
         "web": [
-          "/projects/fit2go/web_home_page.jpg",
-          "/projects/fit2go/web_1.jpg",
-          "/projects/fit2go/web_2.jpg",
-          "/projects/fit2go/web_3.jpg",
-          "/projects/fit2go/web_4.jpg"
+          "/projects/fit2go/web_home_page.webp",
+          "/projects/fit2go/web_1.webp",
+          "/projects/fit2go/web_2.webp",
+          "/projects/fit2go/web_3.webp",
+          "/projects/fit2go/web_4.webp"
         ]
       }
     },
@@ -681,7 +681,7 @@
       "category": "Delivery & Cash on Delivery",
       "summary": "GoLivry is a delivery and cash-on-delivery service in Guinea. The website explains the offer clearly for merchants: GoLivry delivers parcels, collects payment from customers, and reverses the money back to the merchant.",
       "liveUrl": "https://golivry.com/",
-      "heroImage": "/projects/golivry/web_home_page.png",
+      "heroImage": "/projects/golivry/web_home_page.webp",
       "overview": [
         "The site needed to make a practical logistics service feel trustworthy, local, and easy to start using.",
         "The page explains the core delivery flow from merchant signup to order creation, delivery tracking, and merchant payout.",
@@ -704,12 +704,12 @@
       ],
       "gallery": {
         "web": [
-          "/projects/golivry/web_home_clean.png",
-          "/projects/golivry/web_service_clean.png",
-          "/projects/golivry/web_coverage_clean.png"
+          "/projects/golivry/web_home_clean.webp",
+          "/projects/golivry/web_service_clean.webp",
+          "/projects/golivry/web_coverage_clean.webp"
         ],
         "mobile": [
-          "/projects/golivry/mobile_home.png"
+          "/projects/golivry/mobile_home.webp"
         ]
       }
     }

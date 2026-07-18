@@ -33,7 +33,13 @@ const toBasePath = (value: string) => {
       </div>
 
       <div class="project-hero-visual">
-        <img src={toBasePath(project.heroImage)} alt={`${project.name} homepage`} loading="eager" />
+        <img
+          src={toBasePath(project.heroImage)}
+          alt={`${project.name} homepage`}
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
       </div>
     </section>
 
@@ -84,7 +90,7 @@ const toBasePath = (value: string) => {
       <div class="project-gallery-grid web">
         {project.gallery.web.map((image) => (
           <figure class="project-shot wide">
-            <img src={toBasePath(image)} alt={`${project.name} web screenshot`} loading="lazy" />
+            <img src={toBasePath(image)} alt={`${project.name} web screenshot`} loading="lazy" decoding="async" />
           </figure>
         ))}
       </div>
@@ -102,7 +108,7 @@ const toBasePath = (value: string) => {
           <div class="project-gallery-grid mobile">
             {project.gallery.ios.map((image) => (
               <figure class="project-shot phone">
-                <img src={toBasePath(image)} alt={`${project.name} iOS screenshot`} loading="lazy" />
+                <img src={toBasePath(image)} alt={`${project.name} iOS screenshot`} loading="lazy" decoding="async" />
               </figure>
             ))}
           </div>
@@ -113,7 +119,7 @@ const toBasePath = (value: string) => {
           <div class="project-gallery-grid mobile">
             {project.gallery.android.map((image) => (
               <figure class="project-shot phone">
-                <img src={toBasePath(image)} alt={`${project.name} Android screenshot`} loading="lazy" />
+                <img src={toBasePath(image)} alt={`${project.name} Android screenshot`} loading="lazy" decoding="async" />
               </figure>
             ))}
           </div>
