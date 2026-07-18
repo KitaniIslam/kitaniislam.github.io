@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "Kitani Islam",
-    "role": "Software Engineering",
-    "shortBio": "9+ years of software engineering experience across North Africa, Europe, and Asia, I build Web/Mobile products and backend systems. empowering them with AI capabilities.",
+    "role": "Lead Full-Stack Engineer | React, React Native, Node.js & AI Product Delivery",
+    "shortBio": "9+ years building web, mobile, and backend products across North Africa, Europe, and Asia. I lead product engineering, ship client-facing systems, and integrate practical AI/RAG capabilities where they improve the product.",
     "email": "slmkitani@gmail.com",
     "primaryCtaLabel": "Let's Talk",
     "primaryCtaHref": "mailto:slmkitani@gmail.com",
@@ -15,24 +15,24 @@
     "domains": ["Fintech", "Fitness", "AI / RAG"]
   },
   "services": {
-    "title": "Services I Provide",
-    "description": "Promotional features that reflect how I can help across product, engineering, AI, and design.",
+    "title": "What I’m Best At",
+    "description": "Recruiter-friendly summary of where I create the most value across product engineering, delivery, and technical leadership.",
     "items": [
       {
-        "title": "Web / Mobile",
-        "text": "I build web and mobile experiences that are practical, fast, and ready for real users."
+        "title": "Frontend & Mobile Product Engineering",
+        "text": "React, React Native, Next.js, Vue, and Astro delivery for polished web and mobile experiences that are practical, fast, and ready for real users."
       },
       {
-        "title": "Backends and APIs",
-        "text": "I design backend systems and API layers that keep products stable, scalable, and easier to extend."
+        "title": "Backend Systems & API Architecture",
+        "text": "Node.js, REST, GraphQL, database design, authorization, integrations, and API layers that keep products stable, scalable, and easier to extend."
       },
       {
-        "title": "AI Integration / RAG",
-        "text": "I can help add AI-powered features and lightweight RAG workflows into products when they make sense. I position this as practical integration, not deep AI research."
+        "title": "AI Integration & RAG Workflows",
+        "text": "Practical AI-powered product features, retrieval workflows, automation, and internal tools focused on usefulness rather than AI research theater."
       },
       {
-        "title": "Good Eye for Design",
-        "text": "I care about product feel, visual clarity, and details that make interfaces look polished and easier to trust."
+        "title": "Technical Leadership & Product Delivery",
+        "text": "Team leadership, mentoring, release planning, client communication, code review, and turning product feedback into clear engineering priorities."
       }
     ]
   },
@@ -104,10 +104,6 @@
     {
       "name": "Prisma",
       "logo": "https://cdn.simpleicons.org/prisma/9ca3af"
-    },
-    {
-      "name": "PHP",
-      "logo": "https://cdn.simpleicons.org/php/9ca3af"
     },
     {
       "name": "Java",
@@ -220,7 +216,7 @@
   ],
   "caseStudies": {
     "title": "Featured Product Work",
-    "description": "A closer look at one product where brand, planning flows, and cross-platform delivery had to work together.",
+    "description": "Selected product work across training platforms, meal planning, logistics, and conversion-focused web experiences.",
     "items": [
       {
         "name": "Rep&Sets",
@@ -235,6 +231,13 @@
         "impact": "A prepared-meal ordering product where I was brought in to improve and gamify the plan-selection flow around goals, allergies, preferences, and weekly meal quantity.",
         "image": "/projects/fit2go/web_home_page.jpg",
         "href": "/fit2go"
+      },
+      {
+        "name": "GoLivry",
+        "domain": "Delivery & Cash on Delivery",
+        "impact": "A logistics landing experience for Guinea, presenting delivery coverage, cash-on-delivery collection, merchant onboarding, and WhatsApp-led conversion in one focused flow.",
+        "image": "/projects/golivry/web_card.png",
+        "href": "/projects/golivry"
       }
     ]
   },
@@ -335,6 +338,11 @@
         "label": "LinkedIn",
         "icon": "in",
         "href": "https://www.linkedin.com/in/kitani-islam-a0111a14b/"
+      },
+      {
+        "label": "LinkedIn Recommendations",
+        "icon": "rec",
+        "href": "https://www.linkedin.com/in/kitani-islam-a0111a14b/details/recommendations/"
       },
       {
         "label": "WhatsApp",
@@ -439,10 +447,6 @@
         {
           "name": "Prisma",
           "logo": "https://cdn.simpleicons.org/prisma/9ca3af"
-        },
-        {
-          "name": "PHP",
-          "logo": "https://cdn.simpleicons.org/php/9ca3af"
         },
         {
           "name": "Java",
@@ -659,6 +663,44 @@
           "/projects/fit2go/web_2.jpg",
           "/projects/fit2go/web_3.jpg",
           "/projects/fit2go/web_4.jpg"
+        ]
+      }
+    },
+    "golivry": {
+      "name": "GoLivry",
+      "tagline": "Delivery and cash collection built for merchants across Guinea.",
+      "category": "Delivery & Cash on Delivery",
+      "summary": "GoLivry is a delivery and cash-on-delivery service in Guinea. The website explains the offer clearly for merchants: GoLivry delivers parcels, collects payment from customers, and reverses the money back to the merchant.",
+      "liveUrl": "https://golivry.com/",
+      "heroImage": "/projects/golivry/web_home_page.png",
+      "overview": [
+        "The site needed to make a practical logistics service feel trustworthy, local, and easy to start using.",
+        "The page explains the core delivery flow from merchant signup to order creation, delivery tracking, and merchant payout.",
+        "Strong calls to action route merchants toward quote requests and WhatsApp, matching how the target market is likely to communicate."
+      ],
+      "highlights": [
+        "A focused landing page around delivery, cash collection, national coverage, and merchant onboarding.",
+        "A visual direction built around GoLivry's navy and orange brand, field photography, and clear service cards.",
+        "Conversion paths that keep the next step simple: request a quote or continue the conversation on WhatsApp."
+      ],
+      "rolePoints": [
+        "Built the public-facing product website experience for GoLivry.",
+        "Structured the landing flow so merchants can quickly understand who the service is for, how it works, and where it operates.",
+        "Created a responsive presentation that works across desktop and mobile for a service-first audience."
+      ],
+      "contextPoints": [
+        "The product serves merchants that need delivery, customer payment collection, and payout handling.",
+        "The site emphasizes coverage across Guinea and a recognizable team on the ground.",
+        "Trust and clarity matter because the service handles both parcels and cash collection."
+      ],
+      "gallery": {
+        "web": [
+          "/projects/golivry/web_home_clean.png",
+          "/projects/golivry/web_service_clean.png",
+          "/projects/golivry/web_coverage_clean.png"
+        ],
+        "mobile": [
+          "/projects/golivry/mobile_home.png"
         ]
       }
     }

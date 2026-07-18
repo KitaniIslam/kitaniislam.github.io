@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kitaniislam.github.io/sitemap.xml
+Host: https://kitaniislam.github.io

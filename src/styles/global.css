@@ -1024,9 +1024,20 @@ h3 {
   background: rgba(37, 211, 102, 0.1);
 }
 
+.footer-icon-link[aria-label="LinkedIn Recommendations"] {
+  color: #ec7a1a;
+  border-color: rgba(236, 122, 26, 0.24);
+  background: rgba(236, 122, 26, 0.1);
+}
+
 .footer-icon-link svg {
   width: 18px;
   height: 18px;
+}
+
+.footer-icon-text {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .footer-icon-link:hover {
@@ -1245,28 +1256,23 @@ h3 {
 .project-page-shell {
   width: min(1240px, 94vw);
   margin: 0 auto;
-  padding: 40px 0 90px;
+  padding: 32px 0 90px;
   display: grid;
-  gap: 56px;
+  gap: 48px;
 }
 
 .project-hero,
 .project-meta-strip {
-  border-radius: 36px;
+  border-radius: 28px;
 }
 
 .project-hero {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  gap: 34px;
-  padding: 34px;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(236, 122, 26, 0.18),
-      transparent 28%
-    ),
-    linear-gradient(180deg, #131313 0%, #0d0d0d 100%);
+  gap: 42px;
+  align-items: center;
+  padding: 34px 36px;
+  background: linear-gradient(180deg, #141413 0%, #0d0d0c 100%);
   color: #f6f1e8;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -1274,7 +1280,7 @@ h3 {
 .project-back-link {
   display: inline-flex;
   width: fit-content;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   color: rgba(246, 241, 232, 0.76);
   font-size: 0.92rem;
 }
@@ -1289,23 +1295,23 @@ h3 {
 }
 
 .project-hero h1 {
-  font-size: clamp(3rem, 7vw, 5.4rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  margin-top: 12px;
+  font-size: clamp(3rem, 6.2vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-top: 10px;
 }
 
 .project-tagline {
-  margin-top: 18px;
+  margin-top: 16px;
   font-size: 1.25rem;
   color: rgba(246, 241, 232, 0.92);
 }
 
 .project-summary {
-  margin-top: 18px;
+  margin-top: 16px;
   max-width: 36rem;
   font-size: 1.02rem;
-  line-height: 1.7;
+  line-height: 1.62;
   color: rgba(246, 241, 232, 0.72);
 }
 
@@ -1319,21 +1325,30 @@ h3 {
 .project-hero-facts span {
   display: inline-flex;
   align-items: center;
-  min-height: 38px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(246, 241, 232, 0.82);
-  font-size: 0.9rem;
+  gap: 8px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(246, 241, 232, 0.7);
+  font-size: 0.86rem;
   font-weight: 600;
+}
+
+.project-hero-facts span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex: 0 0 auto;
 }
 
 .project-hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .project-secondary-button {
@@ -1355,7 +1370,8 @@ h3 {
 .project-hero-visual img {
   width: 100%;
   display: block;
-  border-radius: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .project-meta-strip {
@@ -1392,9 +1408,9 @@ h3 {
   grid-template-columns: 1.2fr 1fr;
   gap: 56px;
   align-items: start;
-  padding-top: 18px;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  padding-top: 8px;
+  margin-top: 42px;
+  margin-bottom: 42px;
 }
 
 .project-story-list {
@@ -1484,6 +1500,7 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 16px;
+  align-items: start;
 }
 
 .project-shot {
@@ -1507,6 +1524,15 @@ h3 {
 .project-shot.phone img {
   aspect-ratio: 9 / 19.5;
   object-fit: contain;
+}
+
+.project-gallery-grid.mobile > .project-shot.phone:only-child {
+  width: min(260px, 100%);
+  justify-self: center;
+}
+
+.project-gallery-grid.mobile > .project-shot.phone:only-child img {
+  max-height: min(560px, 72vh);
 }
 
 .project-cta-panel {
@@ -1657,8 +1683,9 @@ h3 {
   }
 
   .project-page-shell {
-    gap: 28px;
-    padding-top: 20px;
+    width: min(100% - 32px, 1240px);
+    gap: 30px;
+    padding-top: 18px;
   }
 
   .project-hero,
@@ -1672,7 +1699,40 @@ h3 {
   }
 
   .project-hero {
+    gap: 24px;
     padding: 24px;
+  }
+
+  .project-hero h1 {
+    font-size: clamp(2.75rem, 9vw, 4.1rem);
+  }
+
+  .project-summary {
+    max-width: 100%;
+  }
+
+  .project-hero-visual {
+    justify-content: flex-start;
+  }
+
+  .project-hero-visual img {
+    max-height: 320px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .project-meta-strip {
+    gap: 22px;
+  }
+
+  .project-meta-strip p {
+    max-width: 32rem;
+  }
+
+  .project-story-grid {
+    gap: 28px;
+    margin-top: 28px;
+    margin-bottom: 28px;
   }
 
   .topbar .nav-cta {
@@ -1799,15 +1859,68 @@ h3 {
   }
 
   .project-hero h1 {
-    font-size: clamp(2.6rem, 15vw, 3.6rem);
+    font-size: clamp(2.45rem, 13vw, 3.25rem);
   }
 
   .project-tagline {
-    font-size: 1.08rem;
+    font-size: 1.03rem;
+    line-height: 1.42;
+    margin-top: 12px;
+  }
+
+  .project-summary {
+    font-size: 0.95rem;
+    line-height: 1.58;
+    margin-top: 12px;
   }
 
   .project-back-link {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+  }
+
+  .project-hero {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .project-hero-facts {
+    gap: 10px 14px;
+    margin-top: 18px;
+  }
+
+  .project-hero-facts span {
+    font-size: 0.82rem;
+  }
+
+  .project-hero-actions {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .project-hero-visual img {
+    display: none;
+  }
+
+  .project-meta-strip {
+    gap: 18px;
+  }
+
+  .project-meta-strip p {
+    font-size: 1.02rem;
+    max-width: 100%;
+  }
+
+  .project-story-grid {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
+  .project-gallery-grid.web {
+    gap: 16px;
+  }
+
+  .project-shot img {
+    border-radius: 18px;
   }
 
   .hero-title {

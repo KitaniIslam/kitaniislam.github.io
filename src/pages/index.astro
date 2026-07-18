@@ -27,9 +27,36 @@ const toBasePath = (value: string) => {
   const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
   return `${normalizedBase}${value}`;
 };
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: portfolio.meta.name,
+  jobTitle: portfolio.meta.role,
+  description: portfolio.meta.shortBio,
+  email: portfolio.meta.email,
+  sameAs: portfolio.footer.socials
+    .filter((social) => social.href.startsWith('https://'))
+    .map((social) => social.href),
+  knowsAbout: [
+    'React',
+    'React Native',
+    'Node.js',
+    'API architecture',
+    'AI integration',
+    'RAG workflows',
+    'Product engineering',
+    'Technical leadership'
+  ],
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'Lead Full-Stack Engineer',
+    skills: 'React, React Native, Node.js, TypeScript, API architecture, AI integration, RAG, product delivery, technical leadership'
+  }
+};
 ---
 
 <MainLayout title={`${portfolio.meta.name} | Portfolio`} description={portfolio.meta.shortBio}>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <div class="page-shell" id="home">
     <header class="topbar" data-nav>
        <div class="hero-badge"><span>🚀</span></div>
@@ -288,6 +315,9 @@ const toBasePath = (value: string) => {
                       <circle cx="12" cy="12" r="4" />
                       <circle cx="17.5" cy="6.5" r="1" />
                     </svg>
+                  )}
+                  {social.icon === 'rec' && (
+                    <span class="footer-icon-text" aria-hidden="true">R</span>
                   )}
                 </a>
               ))}

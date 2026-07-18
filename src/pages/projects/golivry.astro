@@ -1,0 +1,141 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ContactModal from '../../components/ContactModal.astro';
+import portfolio from '../../data/portfolio.json';
+
+const project = portfolio.projects.golivry;
+const toBasePath = (value: string) => {
+  if (typeof value !== 'string' || !value.startsWith('/')) return value;
+  const base = import.meta.env.BASE_URL;
+  const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  return `${normalizedBase}${value}`;
+};
+---
+
+<MainLayout title={`${project.name} | Product Work`} description={project.summary}>
+  <div class="project-page-shell">
+    <section class="project-hero">
+      <div class="project-hero-copy">
+        <a href={toBasePath('/#case-study')} class="project-back-link">← Back to portfolio</a>
+        <p class="project-eyebrow">{project.category}</p>
+        <h1>{project.name}</h1>
+        <p class="project-tagline">{project.tagline}</p>
+        <p class="project-summary">{project.summary}</p>
+        <div class="project-hero-facts">
+          <span>Delivery</span>
+          <span>Cash on Delivery</span>
+          <span>Guinea Coverage</span>
+        </div>
+        <div class="project-hero-actions">
+          <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit Live Project</a>
+          <button class="button project-secondary-button" type="button" data-contact-open>Let&apos;s Talk</button>
+        </div>
+      </div>
+
+      <div class="project-hero-visual">
+        <img src={toBasePath(project.heroImage)} alt={`${project.name} homepage`} loading="eager" />
+      </div>
+    </section>
+
+    <section class="project-meta-strip">
+      <article>
+        <span>Focus</span>
+        <p>Merchant onboarding, delivery explanation, and trust-building service copy</p>
+      </article>
+      <article>
+        <span>Service</span>
+        <p>Parcel delivery, cash collection, real-time tracking, and merchant payout</p>
+      </article>
+      <article>
+        <span>Market</span>
+        <p>Local delivery coverage across Conakry and major cities in Guinea</p>
+      </article>
+    </section>
+
+    <section class="project-story-grid">
+      <div class="project-story-panel">
+        <p class="project-section-label">Overview</p>
+        <div class="project-story-list">
+          {project.overview.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+      </div>
+
+      <div class="project-story-panel">
+        <p class="project-section-label">What Stands Out</p>
+        <div class="project-highlight-list">
+          {project.highlights.map((item, index) => (
+            <div class="project-highlight-item">
+              <p class="project-highlight-index">0{index + 1}</p>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-story-grid">
+      <div class="project-story-panel">
+        <p class="project-section-label">My Role</p>
+        <div class="project-story-list">
+          {project.rolePoints.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+      </div>
+
+      <div class="project-story-panel">
+        <p class="project-section-label">Product Context</p>
+        <div class="project-story-list">
+          {project.contextPoints.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery-section">
+      <div class="section-head">
+        <h2>Web Experience</h2>
+        <p>The landing page moves from the service promise into the delivery process, merchant benefits, national coverage, and direct conversion actions.</p>
+      </div>
+
+      <div class="project-gallery-grid web">
+        {project.gallery.web.map((image) => (
+          <figure class="project-shot wide">
+            <img src={toBasePath(image)} alt={`${project.name} web screenshot`} loading="lazy" />
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-gallery-section">
+      <div class="section-head">
+        <h2>Mobile Experience</h2>
+        <p>The mobile view keeps the offer readable and keeps the quote and WhatsApp actions close to the merchant.</p>
+      </div>
+
+      <div class="project-gallery-grid mobile">
+        {project.gallery.mobile.map((image) => (
+          <figure class="project-shot phone">
+            <img src={toBasePath(image)} alt={`${project.name} mobile screenshot`} loading="lazy" />
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-cta-panel">
+      <p class="project-section-label">Live Product</p>
+      <h2>Visit the website</h2>
+      <p>Open GoLivry to see the live delivery service landing experience in context.</p>
+      <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit golivry.com</a>
+    </section>
+  </div>
+  <ContactModal
+    email={portfolio.meta.email}
+    whatsappHref={portfolio.footer.socials.find((social) => social.icon === 'wa')?.href ?? ''}
+    contraUsername="kitani_islam"
+    contraAnalyticsUserId="9d0659f2-f1ac-4bdf-b684-e1a582a2ed65"
+  />
+</MainLayout>

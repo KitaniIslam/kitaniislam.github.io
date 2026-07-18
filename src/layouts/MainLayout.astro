@@ -1,6 +1,14 @@
 ---
-const { title = 'Kitani Portfolio', description = 'Senior Full Stack Developer Portfolio' } = Astro.props;
+const {
+  title = 'Kitani Islam | Lead Full-Stack Engineer',
+  description = 'Lead full-stack engineer portfolio for React, React Native, Node.js, backend systems, AI integration, RAG workflows, and product delivery.',
+  image = '/images/me.jpg',
+  type = 'website'
+} = Astro.props;
 import '../styles/global.css';
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const imageUrl = new URL(image, Astro.site ?? Astro.url).toString();
 ---
 
 <!doctype html>
@@ -8,11 +16,24 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="author" content="Kitani Islam" />
+    <meta name="keywords" content="Kitani Islam, lead full-stack engineer, React developer, React Native developer, Node.js developer, AI integration, RAG workflows, product engineering, technical leadership, Kuala Lumpur software engineer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.svg" />
     <title>{title}</title>
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:site_name" content="Kitani Islam Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />

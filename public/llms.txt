@@ -1,0 +1,20 @@
+# Kitani Islam Portfolio
+
+Kitani Islam is a lead full-stack engineer with 9+ years of experience building web, mobile, backend, and AI-enabled products across North Africa, Europe, and Asia.
+
+Primary strengths:
+- Frontend and mobile product engineering: React, React Native, Next.js, Vue, Astro, TypeScript.
+- Backend systems and APIs: Node.js, REST, GraphQL, database design, integrations, authorization, product infrastructure.
+- AI integration and RAG workflows: practical AI product features, retrieval workflows, internal tools, automation.
+- Technical leadership: mentoring, release planning, code review, product feedback translation, client delivery.
+
+Selected work:
+- Rep&Sets: cross-platform training product for coaches and athletes across web, iOS, and Android.
+- Fit2Go: prepared-meal ordering product with improved guided meal-plan selection.
+- GoLivry: logistics and cash-on-delivery landing experience for Guinea.
+
+Contact and proof:
+- Email: slmkitani@gmail.com
+- LinkedIn: https://www.linkedin.com/in/kitani-islam-a0111a14b/
+- LinkedIn recommendations: https://www.linkedin.com/in/kitani-islam-a0111a14b/details/recommendations/
+- CV: /cv/Kitani-Islam-CV.pdf
