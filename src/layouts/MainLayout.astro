@@ -64,6 +64,26 @@ const imageUrl = new URL(image, Astro.site ?? Astro.url).toString();
           if (event.key === 'Escape') closeModal();
         });
       }
+
+      const navRoot = document.querySelector('[data-nav]');
+      const menuToggle = navRoot?.querySelector('[data-menu-toggle]');
+      const menu = navRoot?.querySelector('[data-menu]');
+      const navLinks = menu?.querySelectorAll('a') ?? [];
+
+      const setMenuState = (open) => {
+        if (!navRoot || !menuToggle || !menu) return;
+        navRoot.classList.toggle('menu-open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+      };
+
+      menuToggle?.addEventListener('click', () => {
+        const isOpen = navRoot?.classList.contains('menu-open');
+        setMenuState(!isOpen);
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => setMenuState(false));
+      });
     </script>
   </body>
 </html>

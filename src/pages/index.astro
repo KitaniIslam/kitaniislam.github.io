@@ -128,7 +128,7 @@ const structuredData = {
             <p class="hero-description">{portfolio.meta.shortBio}</p>
             <div class="hero-actions">
               <button class="button primary" type="button" data-contact-open>{portfolio.meta.primaryCtaLabel}</button>
-              <a class="button secondary" href={toBasePath(portfolio.meta.secondaryCtaHref)} download>{portfolio.meta.secondaryCtaLabel}</a>
+              <a class="button secondary" href={toBasePath(portfolio.meta.secondaryCtaHref)}>{portfolio.meta.secondaryCtaLabel}</a>
             </div>
           </div>
           <div class="hero-visual">
@@ -400,7 +400,7 @@ const structuredData = {
           </div>
         </div>
         <div class="footer-actions">
-          <a href={toBasePath(portfolio.meta.secondaryCtaHref)} class="button ghost" download>Download CV</a>
+          <a href={toBasePath(portfolio.meta.secondaryCtaHref)} class="button ghost">{portfolio.meta.secondaryCtaLabel}</a>
           <div class="footer-contra">
             <div class="contra-hire-me-button" data-analyticsuserid="9d0659f2-f1ac-4bdf-b684-e1a582a2ed65" data-theme="light" data-username="kitani_islam"></div>
           </div>
@@ -418,26 +418,6 @@ const structuredData = {
   </div>
 
   <script is:inline>
-    const navRoot = document.querySelector('[data-nav]');
-    const menuToggle = navRoot?.querySelector('[data-menu-toggle]');
-    const menu = navRoot?.querySelector('[data-menu]');
-    const navLinks = menu?.querySelectorAll('a') ?? [];
-
-    const setMenuState = (open) => {
-      if (!navRoot || !menuToggle || !menu) return;
-      navRoot.classList.toggle('menu-open', open);
-      menuToggle.setAttribute('aria-expanded', String(open));
-    };
-
-    menuToggle?.addEventListener('click', () => {
-      const isOpen = navRoot?.classList.contains('menu-open');
-      setMenuState(!isOpen);
-    });
-
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => setMenuState(false));
-    });
-
     const techToggle = document.querySelector('[data-tech-toggle]');
     const techAnimated = document.querySelector('[data-tech-animated]');
     const techStatic = document.querySelector('[data-tech-static]');

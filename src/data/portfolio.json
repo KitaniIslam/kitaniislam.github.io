@@ -7,7 +7,7 @@
     "primaryCtaLabel": "Let's Talk",
     "primaryCtaHref": "mailto:slmkitani@gmail.com",
     "secondaryCtaLabel": "Download CV",
-    "secondaryCtaHref": "/cv/Kitani-Islam-CV.pdf",
+    "secondaryCtaHref": "/resume/short-highlight",
     "avatar": "/images/full.JPG"
   },
   "overview": {
@@ -374,8 +374,12 @@
         "href": "mailto:slmkitani@gmail.com"
       },
       {
-        "label": "Download CV",
-        "href": "/cv/Kitani-Islam-CV.pdf"
+        "label": "Short Highlight CV",
+        "href": "/resume/short-highlight"
+      },
+      {
+        "label": "Detailed CV",
+        "href": "/resume/detailed-cv"
       }
     ]
   },

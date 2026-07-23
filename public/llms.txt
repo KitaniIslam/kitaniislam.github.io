@@ -18,4 +18,5 @@ Contact and proof:
 - Email: slmkitani@gmail.com
 - LinkedIn: https://www.linkedin.com/in/kitani-islam-a0111a14b/
 - LinkedIn recommendations: https://www.linkedin.com/in/kitani-islam-a0111a14b/details/recommendations/
-- CV: /cv/Kitani-Islam-CV.pdf
+- Short highlight CV: /resume/short-highlight
+- Detailed CV: /resume/detailed-cv

@@ -1,0 +1,64 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ContactModal from '../../components/ContactModal.astro';
+import ResumeNav from '../../components/ResumeNav.astro';
+import portfolio from '../../data/portfolio.json';
+
+const toBasePath = (value: string) => {
+  if (typeof value !== 'string' || !value.startsWith('/')) return value;
+  const base = import.meta.env.BASE_URL;
+  const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  return `${normalizedBase}${value}`;
+};
+
+const detailedPdf = '/cv/Kitani-Islam-CV-Detailed.pdf';
+const detailedPdfPreview = `${detailedPdf}#view=Fit&zoom=page-fit`;
+const shortPath = '/resume/short-highlight';
+---
+
+<MainLayout
+  title="Kitani Islam Detailed CV | Lead Full-Stack Engineer"
+  description="Detailed CV for Kitani Islam, lead full-stack engineer with experience across React, React Native, Node.js, backend systems, cloud, and product leadership."
+>
+  <main class="resume-page-shell">
+    <ResumeNav />
+
+    <section class="resume-viewer-section" aria-label="Detailed CV preview">
+      <div class="resume-preview-toolbar">
+        <div class="resume-preview-top">
+          <div class="resume-preview-copy">
+            <p class="project-section-label">Resume preview</p>
+            <h1>Detailed CV</h1>
+          </div>
+          <a class="button resume-download-button" href={toBasePath(detailedPdf)} download aria-label="Download detailed CV copy">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v11" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M5 20h14" />
+            </svg>
+            <span>Detailed copy</span>
+          </a>
+        </div>
+        <nav class="resume-version-toggle" aria-label="Resume version">
+          <a href={toBasePath(shortPath)}>Short</a>
+          <a href={toBasePath('/resume/detailed-cv')} aria-current="page">Detailed</a>
+        </nav>
+      </div>
+
+      <object class="resume-pdf-viewer" data={toBasePath(detailedPdfPreview)} type="application/pdf">
+        <iframe class="resume-pdf-viewer" src={toBasePath(detailedPdfPreview)} title="Kitani Islam detailed CV"></iframe>
+        <p>
+          Your browser cannot preview this PDF.
+          <a href={toBasePath(detailedPdf)} download>Download the PDF</a>.
+        </p>
+      </object>
+    </section>
+
+    <ContactModal
+      email={portfolio.meta.email}
+      whatsappHref={portfolio.footer.socials.find((social) => social.icon === 'wa')?.href ?? ''}
+      contraUsername="kitani_islam"
+      contraAnalyticsUserId="9d0659f2-f1ac-4bdf-b684-e1a582a2ed65"
+    />
+  </main>
+</MainLayout>
