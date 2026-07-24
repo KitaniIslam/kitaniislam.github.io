@@ -67,28 +67,34 @@ a {
   z-index: 20;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  /* gap: 12px; */
+  gap: 12px;
   align-items: center;
-  border: 1px solid #ced2c9;
+  border: 1px solid rgba(11, 22, 43, 0.08);
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.97);
-  padding: 12px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px 10px 8px 8px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 32px rgba(11, 22, 43, 0.07);
 }
 
 .brand-mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1px solid #d0d2ca;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  border: 1px solid rgba(11, 22, 43, 0.1);
   background: #ffffff;
-  color: #0b162b;
+  color: var(--text);
   font-weight: 700;
   letter-spacing: 0.04em;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.brand-mark:hover {
+  border-color: rgba(236, 122, 26, 0.4);
+  transform: translateY(-1px);
 }
 
 .menu-toggle {
@@ -116,7 +122,7 @@ a {
 .topnav {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 2px;
   flex-wrap: wrap;
 }
 
@@ -124,25 +130,30 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 12px;
+  padding: 10px 16px;
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .nav-icon {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 18px;
   height: 18px;
-  color: #ec7a1a;
-  font-size: 0.92rem;
+  color: var(--orange);
+  font-size: 0.86rem;
   flex: 0 0 auto;
 }
 
-.topnav a:hover {
+.topnav a:hover,
+.topnav a:focus-visible {
   background: #f0f2ec;
   color: var(--text);
 }
@@ -1879,8 +1890,7 @@ h3 {
     justify-self: start;
   }
 
-  .brand-mark,
-  .topbar > .hero-badge {
+  .brand-mark {
     display: none;
   }
 
@@ -1904,8 +1914,13 @@ h3 {
   }
 
   .topnav a {
+    justify-content: flex-start;
     border-radius: 10px;
     padding: 11px 12px;
+  }
+
+  .nav-icon {
+    display: inline-flex;
   }
 
   .service-grid {
@@ -2173,8 +2188,7 @@ h3 {
     white-space: nowrap;
   }
 
-  .brand-mark,
-  .topbar > .hero-badge {
+  .brand-mark {
     display: none;
   }
 

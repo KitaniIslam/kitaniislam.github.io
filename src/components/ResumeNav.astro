@@ -17,7 +17,7 @@ const navItems = [
 ---
 
 <header class="topbar resume-site-nav" data-nav>
-  <a href={toBasePath('/#home')} class="hero-badge resume-home-mark" aria-label="Back to portfolio home"><span>🚀</span></a>
+  <a href={toBasePath('/#home')} class="brand-mark resume-home-mark" aria-label="Back to portfolio home"><span aria-hidden="true">🚀</span></a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation" data-menu-toggle>
     <span></span>
     <span></span>
@@ -31,5 +31,8 @@ const navItems = [
       </a>
     ))}
   </nav>
-  <button class="button nav-cta" type="button" data-contact-open>Let's Talk</button>
+  <button class="button nav-cta" type="button" data-contact-open>
+    <span>Let's Talk</span>
+    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+  </button>
 </header>
