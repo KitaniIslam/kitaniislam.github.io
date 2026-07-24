@@ -58,7 +58,6 @@ a {
   width: min(1140px, 92vw);
   margin: 0 auto;
   padding: 26px 0 80px;
-  overflow-x: clip;
 }
 
 .topbar {
@@ -213,6 +212,7 @@ main {
   display: grid;
   gap: 120px;
   max-width: 100%;
+  overflow-x: clip;
 }
 
 .section-spacing {
