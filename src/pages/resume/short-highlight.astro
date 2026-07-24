@@ -25,20 +25,24 @@ const detailedPath = '/resume/detailed-cv';
 
     <section class="resume-viewer-section" aria-label="Short CV preview">
       <div class="resume-preview-toolbar">
-        <div class="resume-preview-top">
-          <div class="resume-preview-copy">
-            <p class="project-section-label">Resume preview</p>
-            <h1>Short Highlight CV</h1>
-          </div>
-          <a class="button resume-download-button" href={toBasePath(shortPdf)} download aria-label="Download short CV copy">
-            <i class="fa-solid fa-download" aria-hidden="true"></i>
-            <span>Short copy</span>
-          </a>
-        </div>
         <nav class="resume-version-toggle" aria-label="Resume version">
           <a href={toBasePath('/resume/short-highlight')} aria-current="page">Short</a>
           <a href={toBasePath(detailedPath)}>Detailed</a>
         </nav>
+        <div class="resume-preview-copy">
+          <p class="project-section-label">Resume preview</p>
+          <h1>Short Highlight CV</h1>
+        </div>
+        <div class="resume-preview-actions">
+          <a class="button primary resume-download-button" href={toBasePath(shortPdf)} download aria-label="Download short CV copy">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            <span>Download Short PDF</span>
+          </a>
+          <a class="button ghost resume-open-button" href={toBasePath(shortPdf)} target="_blank" rel="noreferrer" aria-label="Open short CV in a new tab">
+            <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+            <span>Open Short PDF</span>
+          </a>
+        </div>
       </div>
 
       <object class="resume-pdf-viewer" data={toBasePath(shortPdfPreview)} type="application/pdf">

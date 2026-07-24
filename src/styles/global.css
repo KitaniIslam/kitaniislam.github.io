@@ -1466,31 +1466,25 @@ h3 {
   position: relative;
   z-index: 12;
   display: grid;
-  gap: 9px;
-  padding: 10px 12px 12px;
+  gap: 16px;
+  padding: 18px 16px 20px;
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-}
-
-.resume-preview-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 10px;
 }
 
 .resume-preview-copy {
   display: grid;
   gap: 2px;
   min-width: 0;
+  text-align: center;
 }
 
 .resume-preview-copy h1 {
   margin: 0;
   color: var(--text);
-  font-size: clamp(1rem, 5vw, 1.35rem);
-  line-height: 1;
+  font-size: clamp(1.15rem, 5vw, 1.35rem);
+  line-height: 1.2;
   overflow-wrap: anywhere;
 }
 
@@ -1524,24 +1518,35 @@ h3 {
   box-shadow: 0 8px 22px rgba(9, 20, 42, 0.09);
 }
 
-.resume-download-button {
+.resume-preview-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.resume-download-button,
+.resume-open-button {
   min-height: 48px;
-  padding-inline: 18px;
+  padding-inline: 14px;
   gap: 7px;
   white-space: nowrap;
+}
+
+.resume-open-button {
   border-color: #c9cec4;
   background: #ffffff;
   color: var(--text);
   box-shadow: none;
 }
 
-.resume-download-button:hover,
-.resume-download-button:focus-visible {
+.resume-open-button:hover,
+.resume-open-button:focus-visible {
   border-color: var(--text);
   background: #f5f7f1;
 }
 
-.resume-download-button i {
+.resume-download-button i,
+.resume-open-button i {
   font-size: 0.95rem;
 }
 
@@ -1566,11 +1571,14 @@ h3 {
   }
 
   .resume-preview-toolbar {
-    padding: 14px 16px;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
   }
 
-  .resume-preview-top {
-    gap: 16px;
+  .resume-preview-copy {
+    text-align: left;
   }
 
   .resume-version-toggle {
@@ -1581,7 +1589,12 @@ h3 {
     border-radius: 999px;
   }
 
-  .resume-download-button {
+  .resume-preview-actions {
+    grid-template-columns: auto auto;
+  }
+
+  .resume-download-button,
+  .resume-open-button {
     width: auto;
   }
 
