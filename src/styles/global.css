@@ -1762,7 +1762,6 @@ h3 {
 .project-meta-strip p {
   font-size: 1.18rem;
   line-height: 1.35;
-  max-width: 16ch;
 }
 
 .project-story-grid {
@@ -1783,6 +1782,7 @@ h3 {
 
 .project-story-list p {
   color: var(--muted);
+  max-width: 52ch;
 }
 
 .project-highlight-list {
@@ -1813,6 +1813,7 @@ h3 {
   color: #8c5527;
   font-size: 1.08rem;
   line-height: 1.45;
+  max-width: 52ch;
 }
 
 .project-capability-grid {
