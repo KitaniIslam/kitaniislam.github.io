@@ -27,8 +27,8 @@ const toBasePath = (value: string) => {
           <span>Playback + Progress</span>
         </div>
         <div class="project-hero-actions">
-          <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit Live Project</a>
-          <button class="button project-secondary-button" type="button" data-contact-open>Let&apos;s Talk</button>
+          <a class="button project-link-button" href={project.liveUrl} target="_blank" rel="noreferrer">Visit Live Project</a>
+          <button class="button primary" type="button" data-contact-open>Let&apos;s Talk</button>
         </div>
       </div>
 
@@ -131,7 +131,7 @@ const toBasePath = (value: string) => {
       <p class="project-section-label">Live Product</p>
       <h2>Visit the website</h2>
       <p>Open the live site to explore the product directly.</p>
-      <a class="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">Visit repnsets.com</a>
+      <a class="button project-link-button" href={project.liveUrl} target="_blank" rel="noreferrer">Visit repnsets.com</a>
     </section>
   </div>
   <ContactModal

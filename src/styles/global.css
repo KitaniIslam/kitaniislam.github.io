@@ -151,30 +151,45 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--text);
+  gap: 8px;
+  min-height: 48px;
+  border: 2px solid var(--text);
   border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 0.92rem;
-  font-weight: 650;
+  padding: 0 22px;
+  font-family: inherit;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .button.primary {
   background: var(--orange);
   border-color: var(--orange);
   color: #ffffff;
+  box-shadow: 0 10px 24px rgba(236, 122, 26, 0.18);
+}
+
+.button.primary:hover {
+  background: #db640d;
+  border-color: #db640d;
 }
 
 .button.ghost {
-  border-color: #bbbdb5;
+  border-color: var(--text);
   color: var(--text);
-  background: transparent;
+  background: #ffffff;
+}
+
+.button.ghost:hover {
+  background: #f1f3ed;
 }
 
 .nav-cta {
   background: var(--orange);
   border-color: var(--orange);
   color: #ffffff;
-  cursor: pointer;
 }
 
 main {
@@ -341,14 +356,14 @@ h3 {
 }
 
 .button.secondary {
-  background: transparent;
+  background: #ffffff;
   border: 2px solid var(--text);
   color: var(--text);
 }
 
 .button.secondary:hover {
-  background: var(--text);
-  color: #f5f5f2;
+  background: #f1f3ed;
+  color: var(--text);
 }
 
 .section-block {
@@ -1463,8 +1478,8 @@ h3 {
 }
 
 .resume-download-button {
-  min-height: 42px;
-  padding-inline: 12px;
+  min-height: 48px;
+  padding-inline: 18px;
   gap: 7px;
   white-space: nowrap;
   border-color: #c9cec4;
@@ -1627,14 +1642,25 @@ h3 {
   margin-top: 24px;
 }
 
-.project-secondary-button {
-  border: 1px solid rgba(255, 255, 255, 0.14);
+.project-link-button {
+  border-color: var(--text);
+  background: #ffffff;
+  color: var(--text);
+}
+
+.project-link-button:hover {
+  background: #f1f3ed;
+}
+
+.project-hero .project-link-button {
+  border-color: rgba(246, 241, 232, 0.45);
   background: rgba(255, 255, 255, 0.03);
   color: #f6f1e8;
 }
 
-.project-secondary-button:hover {
+.project-hero .project-link-button:hover {
   background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(246, 241, 232, 0.7);
 }
 
 .project-hero-visual {
