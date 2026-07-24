@@ -7,8 +7,7 @@
     "primaryCtaLabel": "Let's Talk",
     "primaryCtaHref": "mailto:slmkitani@gmail.com",
     "secondaryCtaLabel": "Download CV",
-    "secondaryCtaHref": "/resume/short-highlight",
-    "avatar": "/images/full.JPG"
+    "secondaryCtaHref": "/resume/short-highlight"
   },
   "overview": {
     "experienceYears": "9+ Years Experience",
