@@ -109,6 +109,12 @@ const structuredData = {
               <button class="button primary" type="button" data-contact-open>{portfolio.meta.primaryCtaLabel}</button>
               <a class="button secondary" href={toBasePath(portfolio.meta.secondaryCtaHref)}>{portfolio.meta.secondaryCtaLabel}</a>
             </div>
+            <ul class="hero-stats" aria-label="Experience overview">
+              <li class="hero-stat hero-stat-primary">{portfolio.overview.experienceYears}</li>
+              {portfolio.overview.domains.map((domain) => (
+                <li class="hero-stat">{domain}</li>
+              ))}
+            </ul>
           </div>
           <div class="hero-visual">
             <div class="hero-image-wrapper">
@@ -124,7 +130,6 @@ const structuredData = {
                   fetchpriority="high"
                 />
               </div>
-              <div class="hero-image-decoration"></div>
             </div>
           </div>
         </div>
@@ -150,37 +155,6 @@ const structuredData = {
           ))}
         </div>
       </section>
-
-      {portfolio.recommendations.items.length > 0 && (
-        <section id="recommendations" class="section-spacing section-block recommendations-section">
-          <div class="section-head recommendations-head">
-            <h2>{portfolio.recommendations.title}</h2>
-            <p>{portfolio.recommendations.description}</p>
-          </div>
-
-          <div class="recommendations-scroll" aria-label="LinkedIn recommendations">
-            {portfolio.recommendations.items.map((recommendation) => (
-              <a class="recommendation-card" href={portfolio.recommendations.linkedinHref} target="_blank" rel="noreferrer">
-                <p class="recommendation-quote">“{recommendation.quote}”</p>
-                {recommendation.summary && <p class="recommendation-summary">{recommendation.summary}</p>}
-                <div>
-                  <h3>{recommendation.name}</h3>
-                  <p>{recommendation.position}</p>
-                  {recommendation.date && <p class="recommendation-date">{recommendation.date}</p>}
-                </div>
-              </a>
-            ))}
-            <a class="recommendation-card recommendation-card-cta" href={portfolio.recommendations.linkedinHref} target="_blank" rel="noreferrer">
-              <p class="recommendation-quote">Worked with me?</p>
-              <p class="recommendation-summary">Leave a short recommendation about the project, collaboration, or delivery experience.</p>
-              <div>
-                <h3>Add your feedback</h3>
-                <p>Opens LinkedIn recommendations</p>
-              </div>
-            </a>
-          </div>
-        </section>
-      )}
 
       <section id="case-study" class="section-spacing section-block">
         <div class="section-head">
@@ -230,6 +204,37 @@ const structuredData = {
         </div>
       </section>
 
+      {portfolio.recommendations.items.length > 0 && (
+        <section id="recommendations" class="section-spacing section-block recommendations-section">
+          <div class="section-head recommendations-head">
+            <h2>{portfolio.recommendations.title}</h2>
+            <p>{portfolio.recommendations.description}</p>
+          </div>
+
+          <div class="recommendations-scroll" aria-label="LinkedIn recommendations">
+            {portfolio.recommendations.items.map((recommendation) => (
+              <a class="recommendation-card" href={portfolio.recommendations.linkedinHref} target="_blank" rel="noreferrer">
+                <p class="recommendation-quote">“{recommendation.quote}”</p>
+                {recommendation.summary && <p class="recommendation-summary">{recommendation.summary}</p>}
+                <div>
+                  <h3>{recommendation.name}</h3>
+                  <p>{recommendation.position}</p>
+                  {recommendation.date && <p class="recommendation-date">{recommendation.date}</p>}
+                </div>
+              </a>
+            ))}
+            <a class="recommendation-card recommendation-card-cta" href={portfolio.recommendations.linkedinHref} target="_blank" rel="noreferrer">
+              <p class="recommendation-quote">Worked with me?</p>
+              <p class="recommendation-summary">Leave a short recommendation about the project, collaboration, or delivery experience.</p>
+              <div>
+                <h3>Add your feedback</h3>
+                <p>Opens LinkedIn recommendations</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      )}
+
       <section id="tech" class="section-spacing section-block tech-section">
         <div class="section-head">
           <h2>{portfolio.technologiesSection.title}</h2>
@@ -239,40 +244,42 @@ const structuredData = {
           </button>
         </div>
 
-        <div class="logo-marquee" data-tech-animated>
-          <div class="logo-track left">
-            {[...firstTechRow, ...firstTechRow].map((tech) => (
-              <article class="logo-item">
-                <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
-                <span>{tech.name}</span>
-              </article>
-            ))}
+        <div class="tech-panel">
+          <div class="logo-marquee" data-tech-animated>
+            <div class="logo-track left">
+              {[...firstTechRow, ...firstTechRow].map((tech) => (
+                <article class="logo-item">
+                  <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
+                  <span>{tech.name}</span>
+                </article>
+              ))}
+            </div>
+            <div class="logo-track right">
+              {[...secondTechRow, ...secondTechRow].map((tech) => (
+                <article class="logo-item">
+                  <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
+                  <span>{tech.name}</span>
+                </article>
+              ))}
+            </div>
           </div>
-          <div class="logo-track right">
-            {[...secondTechRow, ...secondTechRow].map((tech) => (
-              <article class="logo-item">
-                <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
-                <span>{tech.name}</span>
-              </article>
-            ))}
-          </div>
-        </div>
 
-        <div class="tech-badge-wall is-hidden" data-tech-static>
-          <div class="tech-groups">
-            {techGroups.map((group) => (
-              <div class="tech-group">
-                <h4>{group.title}</h4>
-                <div class="tech-row">
-                  {(group.items ?? []).map((tech) => (
-                    <article class="logo-item">
-                      <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
-                      <span>{tech.name}</span>
-                    </article>
-                  ))}
+          <div class="tech-badge-wall is-hidden" data-tech-static>
+            <div class="tech-groups">
+              {techGroups.map((group) => (
+                <div class="tech-group">
+                  <h4>{group.title}</h4>
+                  <div class="tech-row">
+                    {(group.items ?? []).map((tech) => (
+                      <article class="logo-item">
+                        <img src={toBasePath(tech.logo)} alt={tech.name} loading="lazy" decoding="async" />
+                        <span>{tech.name}</span>
+                      </article>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -300,41 +307,38 @@ const structuredData = {
         )}
       </section>
 
-      <section id="education" class="section-spacing section-block education-section">
+      <section id="credentials" class="section-spacing section-block credentials-section">
         <div class="section-head">
-          <h2>{portfolio.education.title}</h2>
-          <p>{portfolio.education.description}</p>
+          <h2>Education &amp; Recognition</h2>
+          <p>Academic background alongside professional achievements and industry recognition.</p>
         </div>
 
-        <div class="education-grid">
+        <div class="credentials-grid">
           {portfolio.education.items.map((edu) => (
-            
+            <div class="credentials-card">
+              <span class="credentials-icon" aria-hidden="true">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </span>
               <div class="education-content">
                 <h3>{edu.degree}</h3>
                 <p class="education-institution">{edu.institution}</p>
-                <p class="education-period">{edu.period}</p>
-                <p class="education-location">{edu.location}</p>
+                <p class="education-period">{edu.period} · {edu.location}</p>
                 <p class="education-description">{edu.description}</p>
               </div>
-            
+            </div>
           ))}
-        </div>
-      </section>
-
-      <section id="awards" class="section-spacing section-block awards-section">
-        <div class="section-head">
-          <h2>{portfolio.awards.title}</h2>
-          <p>{portfolio.awards.description}</p>
-        </div>
-
-        <div class="awards-grid">
           {portfolio.awards.items.map((award) => (
+            <div class="credentials-card">
+              <span class="credentials-icon credentials-icon-award" aria-hidden="true">
+                <span>{award.icon}</span>
+              </span>
               <div class="award-content">
                 <h3>{award.title}</h3>
                 <p class="award-organization">{award.organization}</p>
                 <p class="award-year">{award.year}</p>
                 <p class="award-description">{award.description}</p>
               </div>
+            </div>
           ))}
         </div>
       </section>
@@ -370,6 +374,16 @@ const structuredData = {
                 </a>
               ))}
           </div>
+        </div>
+        <div class="footer-links">
+          <p class="footer-links-title">Quick Links</p>
+          <ul>
+            {portfolio.footer.links
+              .filter((link) => link.label !== 'Email')
+              .map((link) => (
+                <li><a href={toBasePath(link.href)}>{link.label}</a></li>
+              ))}
+          </ul>
         </div>
         <div class="footer-actions">
           <a href={toBasePath(portfolio.meta.secondaryCtaHref)} class="button ghost">{portfolio.meta.secondaryCtaLabel}</a>

@@ -212,7 +212,6 @@ main {
   display: grid;
   gap: 120px;
   max-width: 100%;
-  overflow-x: clip;
 }
 
 .section-spacing {
@@ -317,6 +316,49 @@ h3 {
   flex-wrap: wrap;
 }
 
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-stat {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.hero-stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+  transform: translateY(-50%);
+}
+
+.hero-stat:first-child {
+  padding-left: 0;
+}
+
+.hero-stat:first-child::before {
+  display: none;
+}
+
+.hero-stat-primary {
+  color: var(--orange);
+  font-weight: 700;
+}
+
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -360,17 +402,6 @@ h3 {
   transform-origin: center 36%;
 }
 
-.hero-image-decoration {
-  position: absolute;
-  top: 22px;
-  right: -8px;
-  bottom: 18px;
-  width: 12px;
-  border-radius: 999px;
-  background: var(--orange);
-  z-index: 1;
-}
-
 .button.secondary {
   background: #ffffff;
   border: 2px solid var(--text);
@@ -388,35 +419,37 @@ h3 {
   scroll-margin-top: 116px;
 }
 
-.awards-section {
-  margin-bottom: 120px;
-}
-
-.education-section {
-  margin-bottom: 120px;
-}
-
-.education-grid {
+.credentials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 44px 48px;
 }
 
-.education-card {
+.credentials-card {
   display: flex;
-  gap: 20px;
-  padding: 24px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  transition: all 0.3s ease;
+  gap: 18px;
 }
 
-.education-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--orange);
+.credentials-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(236, 122, 26, 0.1);
+  color: var(--orange);
+  font-size: 1.3rem;
+}
+
+.credentials-icon-award {
+  background: #ffffff;
+  border: 2px solid var(--line);
+}
+
+.credentials-icon-award span {
+  font-size: 1.5rem;
 }
 
 .education-content {
@@ -542,7 +575,7 @@ h3 {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 40px 56px;
 }
 
 .service-feature {
@@ -550,13 +583,13 @@ h3 {
   grid-template-columns: auto 1fr;
   gap: 20px;
   align-items: start;
-  padding: 26px 0 22px;
-  border-top: 1px solid rgba(11, 22, 43, 0.12);
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.25s ease;
 }
 
-.service-feature:nth-child(1),
-.service-feature:nth-child(2) {
-  border-top-color: rgba(236, 122, 26, 0.45);
+.service-feature:hover {
+  border-color: rgba(236, 122, 26, 0.5);
 }
 
 .service-icon {
@@ -685,12 +718,17 @@ h3 {
 }
 
 .tech-section {
-  min-height: 60vh;
   align-content: center;
 }
 
+.tech-panel {
+  display: grid;
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+}
+
 .experience-section {
-  min-height: 100vh;
   align-content: center;
 }
 
@@ -917,13 +955,12 @@ h3 {
 
 .chip {
   display: inline-flex;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  color: #9f5823;
-  border: 1px solid #e7c5a8;
-  background: #fff3ea;
-  margin-bottom: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
 }
 
 .carousel-btn {
@@ -1023,45 +1060,6 @@ h3 {
   background: #f4f5f1;
 }
 
-.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.award-card {
-  display: flex;
-  gap: 20px;
-  padding: 16px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  transition: all 0.3s ease;
-}
-
-/* .award-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--orange);
-} */
-
-.award-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-md);
-  background: #f8fafc;
-  border: 2px solid #e3e8ef;
-  flex-shrink: 0;
-}
-
-.award-icon span {
-  font-size: 1.8rem;
-}
-
 .award-content {
   flex: 1;
   display: flex;
@@ -1099,20 +1097,53 @@ h3 {
 
 .footer {
   min-height: auto;
-  border-top: 1px solid var(--line);
-  padding-top: 28px;
+  margin-top: 90px;
+  border-top: 2px solid rgba(236, 122, 26, 0.2);
+  padding-top: 36px;
 }
 
 .footer-horizontal {
   display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
+  grid-template-columns: 1.2fr auto auto;
+  align-items: start;
   gap: 24px;
 }
 
 .footer-left {
   display: grid;
   gap: 16px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.footer-links-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.footer-links ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--orange);
 }
 
 .footer-actions {
@@ -1993,8 +2024,11 @@ h3 {
   }
 
   .tech-section {
-    min-height: auto;
     padding-block: 34px 42px;
+  }
+
+  .tech-panel {
+    padding: 26px 0;
   }
 
   .tech-section .section-head {
@@ -2014,7 +2048,7 @@ h3 {
 
   .footer-horizontal {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 32px;
     align-items: start;
   }
 
@@ -2025,6 +2059,7 @@ h3 {
   .footer-actions {
     flex-wrap: wrap;
     justify-self: start;
+    gap: 12px;
   }
 
   .footer-social-icons {
@@ -2313,29 +2348,18 @@ h3 {
     padding-top: 28px;
   }
 
-  .awards-grid {
+  .credentials-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 28px;
   }
 
-  .award-card {
+  .credentials-card {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding-top: 20px;
   }
 
-  .award-icon {
-    margin: 0 auto 16px;
-  }
-
-  .education-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .education-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
+  .credentials-icon {
+    margin: 0 auto;
   }
 }
