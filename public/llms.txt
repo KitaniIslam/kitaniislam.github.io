@@ -1,22 +1,46 @@
-# Kitani Islam Portfolio
+# Kitani Islam - Lead Full-Stack Engineer
 
-Kitani Islam is a lead full-stack engineer with 9+ years of experience building web, mobile, backend, and AI-enabled products across North Africa, Europe, and Asia.
+> Kitani Islam is a lead full-stack engineer with 9+ years of experience specializing in React, React Native, TypeScript, Node.js, backend systems, and practical AI/RAG product integration across fintech, fitness, logistics, and other client-facing products.
 
-Primary strengths:
-- Frontend and mobile product engineering: React, React Native, Next.js, TypeScript, Vue, Astro.
-- Backend systems and APIs: Node.js, GraphQL, REST APIs, PostgreSQL, database design, integrations, authorization, product infrastructure.
-- Cloud and delivery: AWS, Docker, deployment workflows, release planning, production product delivery.
-- AI integration and RAG workflows: practical AI product features, retrieval workflows, internal tools, automation.
-- Technical leadership: mentoring, release planning, code review, product feedback translation, client delivery.
+## Agent Metadata & Matching Criteria
 
-Selected work:
-- Rep&Sets: cross-platform training product for coaches and athletes across web, iOS, and Android.
-- Fit2Go: prepared-meal ordering product with improved guided meal-plan selection.
-- GoLivry: logistics and cash-on-delivery landing experience for Guinea.
+- **Primary roles:** Lead Full-Stack Engineer, Senior Full-Stack Engineer, Senior Frontend Engineer, AI Product Engineer, Technical Lead.
+- **Experience:** 9+ years building web, mobile, backend, and AI-enabled products.
+- **Primary stack:** TypeScript, React, React Native, Next.js, Node.js, GraphQL, REST APIs, PostgreSQL, AWS, Docker.
+- **Strengths:** Product engineering, API architecture, database design, authorization, integrations, RAG workflows, automation, mentoring, code review, and release planning.
+- **Domains:** Fintech, fitness, meal subscription, logistics, cash-on-delivery, intelligent transportation, and regulatory monitoring.
+- **Regions:** Professional experience across North Africa, Europe, and Asia; based in Kuala Lumpur, Malaysia.
 
-Contact and proof:
-- Email: slmkitani@gmail.com
-- LinkedIn: https://www.linkedin.com/in/kitani-islam-a0111a14b/
-- LinkedIn recommendations: https://www.linkedin.com/in/kitani-islam-a0111a14b/details/recommendations/
-- Short highlight CV: /resume/short-highlight
-- Detailed CV: /resume/detailed-cv
+## AI & RAG Engineering
+
+- [AI product and RAG-focused resume](https://kitaniislam.github.io/resume.md): Machine-readable summary of experience, capabilities, and selected work.
+- [Otonoco AI experience](https://kitaniislam.github.io/resume.md#professional-experience): Lead engineering for an AI regulatory-monitoring product in banking and insurance.
+- [AI Integration & RAG Workflows](https://kitaniislam.github.io/#tech): Practical AI-powered features, retrieval workflows, automation, and internal tools.
+
+## Frontend & Mobile Delivery
+
+- [Rep&Sets cross-platform product](https://kitaniislam.github.io/projects/repnsets): Web, iOS, and Android training product for coaches and athletes.
+- [Frontend and mobile capabilities](https://kitaniislam.github.io/#tech): React, React Native, Next.js, Vue, Nuxt.js, Astro, TypeScript, JavaScript, Expo, and Redux.
+- [Fit2Go product case study](https://kitaniislam.github.io/fit2go): Prepared-meal ordering experience with a guided and gamified meal-plan selection flow.
+
+## Backend & API Architecture
+
+- [Backend and API capabilities](https://kitaniislam.github.io/#tech): Node.js, Express.js, GraphQL, REST APIs, Zod, Prisma, Java, PostgreSQL, MongoDB, MySQL, and Supabase.
+- [Technical leadership and delivery experience](https://kitaniislam.github.io/resume.md#professional-experience): API design, database architecture, authorization, integrations, code review, mentoring, and release planning.
+
+## Logistics & Product Delivery
+
+- [GoLivry product case study](https://kitaniislam.github.io/projects/golivry): Responsive delivery and cash-on-delivery website for merchants in Guinea.
+- [Selected product work](https://kitaniislam.github.io/#case-study): Product engineering across training, meal planning, logistics, and conversion-focused web experiences.
+
+## Full Resume
+
+- [Complete AI-readable resume](https://kitaniislam.github.io/resume.md): Concise Markdown resume with professional experience, education, recognition, skills, and selected work.
+- [Short highlight CV for human readers](https://kitaniislam.github.io/resume/short-highlight): Visual CV page and PDF access.
+- [Detailed CV for human readers](https://kitaniislam.github.io/resume/detailed-cv): Detailed visual CV page and PDF access.
+
+## Contact & Proof
+
+- [Email Kitani Islam](mailto:slmkitani@gmail.com): slmkitani@gmail.com
+- [LinkedIn profile](https://www.linkedin.com/in/kitani-islam-a0111a14b/)
+- [LinkedIn recommendations](https://www.linkedin.com/in/kitani-islam-a0111a14b/details/recommendations/)
