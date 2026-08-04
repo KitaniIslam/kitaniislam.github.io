@@ -43,6 +43,9 @@ const imageUrl = new URL(image, Astro.site ?? Astro.url).toString();
   </head>
   <body>
     <slot />
+    <button class="scroll-to-top" type="button" aria-label="Scroll to top" data-scroll-to-top>
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
     <script is:inline>
       const contactModal = document.querySelector('[data-contact-modal]');
       if (contactModal) {
@@ -85,6 +88,20 @@ const imageUrl = new URL(image, Astro.site ?? Astro.url).toString();
 
       navLinks.forEach((link) => {
         link.addEventListener('click', () => setMenuState(false));
+      });
+
+      const scrollToTop = document.querySelector('[data-scroll-to-top]');
+      const updateScrollToTop = () => {
+        scrollToTop?.classList.toggle('is-visible', window.scrollY > 500);
+      };
+
+      window.addEventListener('scroll', updateScrollToTop, { passive: true });
+      updateScrollToTop();
+      scrollToTop?.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+        });
       });
     </script>
   </body>
